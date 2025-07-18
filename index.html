@@ -1,11 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marayana LP</title>
+    <title>Narayana LP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    </style>
 </head>
+
 <body>
-    
+
+    <main>
+        <section id="pop-banner"
+            class="fixed top-0 left-0 bg-gradient-to-r from-[#098FEA] to-[#066EB5] py-[15px] w-full z-50 transition-all duration-500">
+            <div class="container mx-auto max-w-screen-xl px-4 relative">
+                <div class="flex flex-wrap items-center justify-center">
+                    <div class="flex items-center flex-col md:flex-row gap-y-4 gap-x-6">
+                        <p class="text-white font-semibold font-[Poppins]">Admission Open to a World of Wonder!</p>
+                        <button type="button"
+                            class="bg-gradient-to-r from-[#FF9F50] to-[#ED7A1C] px-8 py-1 text-white rounded-[20px] border border-white font-[Poppins]">
+                            Enrol Now!
+                        </button>
+                    </div>
+                </div>
+                <img src="assets/close-circle.webp" alt="Close" id="closeBanner"
+                    class="absolute right-3 lg:top-1 md:top-1 top-9 w-6 h-6 cursor-pointer" />
+            </div>
+        </section>
+
+        <header id="mainHeader" class="relative transition-all duration-500 lg:mt-[70px] mt-[95px]">
+            <div class="container bg-white mx-auto p-4">
+                <div class="flex justify-center items-center">
+                    <img src="assets/logo.png" alt="logo" class="w-[350px] h-full">
+                </div>
+            </div>
+        </header>
+
+        <section class="relative w-full lg:h-[751px] h-[400px] md:h-[600px]">
+            <img src="assets/banner.webp" alt="banner" class="absolute inset-0 w-full h-full object-cover">
+            <div class="lg:absolute lg:bottom-0 lg:right-20 md:absolute md:bottom-0 md:right-10 bg-white p-6 lg:w-[550px] md:w-[450px] md:p-4">
+                <form action="" class="max-w-lg mx-auto p-4 mt-[400px] md:mt-[0px] lg:mt-0 border border-2 border-black rounded-lg md:border-none lg:border-none">
+                    <h2 class="text-2xl font-bold font-[Oswald] mb-8 text-center text-[#0776C1]">
+                        Admissions Open 2025-26
+                    </h2>
+
+                    <select title="Please select a class"
+                        class="border border-0 border-b-[1.5px] border-[#313030] p-2 w-full mb-6 font-[Poppins] focus:outline-none focus:ring-0"
+                        required>
+                        <option value="">Select Class</option>
+                        <option value="nursery">Nursery</option>
+                        <option value="kg">KG</option>
+                        <option value="class-1">Class 1</option>
+                        <option value="class-2">Class 2</option>
+                    </select>
+
+                    <input type="text" name="name" placeholder="Student Name"
+                        class="border border-0 border-b-[1.5px] border-[#313030] p-2 w-full mb-6 font-[Poppins] focus:outline-none focus:ring-0"
+                        required title="Please enter your name>
+
+                    <input type="email" name="email" placeholder="Parent Email ID" title="Please enter a valid email ID"
+                        class="border border-0 border-b-[1.5px] border-[#313030] p-2 w-full mb-6 font-[Poppins] focus:outline-none focus:ring-0"
+                        required>
+
+                    <input type="tel" name="mobile" placeholder="Mobile Number"
+                        class="border-0 border-b-[1.5px] border-[#313030] p-2 w-full mb-6 font-[Poppins] focus:outline-none focus:ring-0 focus:border-[#0776C1]"
+                        required pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" />
+
+                    <select title="Please select a board"
+                        class="border border-0 border-b-[1.5px] border-[#313030] p-2 w-full mb-10 font-[Poppins] focus:outline-none focus:ring-0"
+                        required>
+                        <option value="">Select Board</option>
+                        <option value="cbse">CBSE</option>
+                        <option value="icse">ICSE</option>
+                        <option value="state-board">State Board</option>
+                        <option value="ib">IB</option>
+                    </select>
+
+                    <div class="flex justify-center">
+                        <button type="submit"
+                            class="relative text-white lg:px-52 px-28 py-3 bg-gradient-to-r from-[#FF9F50] to-[#ED7A1C] rounded-lg transition font-[Poppins] hover:opacity-90 
+                               after:content-[''] after:absolute after:ml-[10px] after:w-5 after:h-5 after:bg-[url('./assets/exit.png')] after:bg-contain after:bg-no-repeat">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+
+        <section>
+            <div class="container mx-auto px-4">
+                <div class="flex flex-wrap items-center justifi-center text-center">
+                    <h2 class="font-[Amaranth]">Why Narayana is Different from Others?</h2>
+                    <p class="font-[Poppins]">
+                        At Narayana, we take pride in our 46+ years legacy of excellence. Our approach, refined over the last 4+ decades, has led us to a process driven system which is in line with today's needs & requirements to ensure Overall Development of students. Through this system, we foster an environment where excellence thrives. At Narayana, it is your dreams that fuel our passion and perseverance because at Narayana, Your Dreams Are Our Dreams.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        const banner = document.getElementById('pop-banner');
+        const closeBtn = document.getElementById('closeBanner');
+        const header = document.getElementById('mainHeader');
+
+        closeBtn.addEventListener('click', () => {
+            banner.classList.add('opacity-0', '-translate-y-full');
+            setTimeout(() => {
+                banner.style.display = 'none';
+                header.classList.remove('lg:mt-[70px]', 'mt-[95px]');
+                header.classList.add('fixed', 'top-0', 'left-0', 'w-full', 'z-40',);
+            }, 500);
+        });
+    </script>
+
 </body>
+
 </html>
