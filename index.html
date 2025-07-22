@@ -31,7 +31,7 @@
         .splide__arrows--ltr .splide__arrow {
             position: relative;
             top: 0;
-            background: rgb(131, 131, 131);
+            background: #D9D9D9;
             width: 48px;
             height: 48px;
             border-radius: 20%;
@@ -51,7 +51,6 @@
         }
 
         .splide__arrows--ltr .splide__arrow:active {
-            animation: pulse 0.4s ease;
             background-color: rgb(58, 58, 58);
         }
 
@@ -421,7 +420,6 @@
                         class="star-heading w-[300px] relative font-[Amaranth] text-[#0776C1] text-2xl md:text-[30px] text-center mb-6 leading-tight before:content-[''] before:absolute before:w-16 before:h-16 before:-top-10 md:before:-left-6 before:-left-4 before:bg-[url('./assets/star.png')] before:bg-contain before:bg-no-repeat">
                         The Narayana Edge
                     </h2>
-
                 </div>
                 <div class="flex flex-wrap items-center justify-between gap-4 h-auto">
                     <div class="w-[40%] md:w-[30%] lg:w-[15%] bg-[#0776C1] px-4 py-8 flex justify-center items-center order-1 lg:order-1"
@@ -467,24 +465,21 @@
         </section>
 
 
-        <section class="bg-white py-8 relative">
-            <img src="assets/baby.webp" alt="" class="absolute top-0 left-0 w-auto baby" loading="lazy" decoding="async"
+        <section class="bg-white pb-6 pt-0 md:py-6 relative">
+            <img src="assets/baby.webp" alt="" class="absolute top-0 left-0 w-auto baby mb-8" loading="lazy" decoding="async"
                 fetchpriority="low" data-aos="fade-right" data-aos-offset="200" data-aos-duration="1000"
                 data-aos-delay="0" data-aos-easing="ease-in-out">
 
-            <div class="container mx-auto flex flex-col md:flex-row px-4">
-                <!-- Left Image Container -->
+            <div class="container mx-auto flex flex-col md:flex-row px-4 gap-y-6">
                 <div class="relative w-full md:w-1/2 h-[300px] md:h-[730px] mb-[30px] md:mb-0">
                     <img src="assets/star2.png" alt="" loading="lazy" decoding="async" fetchpriority="low"
                         class="float-up-down absolute top-0 right-0 md:right-[185px] z-20 w-[100px] h-[100px] md:w-auto md:h-auto">
                     <img src="assets/cloud.png" alt="" loading="lazy" decoding="async" fetchpriority="low"
-                        class="move-left-right absolute bottom-0 md:right-20 right-0 z-40 w-[100px] h-auto md:w-auto">
+                        class="move-left-right absolute -bottom-10 md:bottom-0 md:right-20 right-0 z-40 w-[100px] h-auto md:w-auto">
                 </div>
-
-                <!-- Right Content -->
-                <div class="w-full md:w-1/2 mt-6 md:mt-4" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+                <div class="w-full md:w-1/2 mt-10 md:mt-4" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
                     data-duration="4500">
-                    <div class="mb-8">
+                    <div class="md:mb-8 mb-4">
                         <h2
                             class="font-[Amaranth] text-white text-2xl md:text-[30px] text-center leading-tight bg-[#0776C1] px-6 py-3 w-full max-w-md mb-6">
                             Age: 3 to 5 | Nursery - U.K.G
@@ -495,7 +490,7 @@
                             space.
                         </p>
                     </div>
-                    <div class="flex flex-col md:flex-row gap-4 mb-8">
+                    <div class="flex flex-col md:flex-row gap-4 md:mb-8 mb-6">
                         <ul class="font-[Poppins] text-[16px] space-y-3">
                             <li
                                 class="relative pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-5 before:h-5 before:bg-[url('assets/verify.png')] before:bg-contain before:bg-no-repeat">
@@ -550,7 +545,8 @@
                     </div>
 
                     <div class="md:mt-10 mt-6">
-                        <button type="button" data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="bg-gradient-to-r from-[#FF9F50] to-[#ED7A1C] hover:from-[#ED7A1C] hover:to-[#FF9F50] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out px-8 py-2 text-white rounded-[20px] border border-white font-[Poppins]">
+                        <button type="button" data-modal-target="crud-modal" data-modal-toggle="crud-modal"
+                            class="bg-gradient-to-r from-[#FF9F50] to-[#ED7A1C] hover:from-[#ED7A1C] hover:to-[#FF9F50] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out px-8 py-2 text-white rounded-[20px] border border-white font-[Poppins]">
                             Enrol Now!
                         </button>
 
@@ -561,7 +557,7 @@
             </div>
         </section>
 
-        <section class="bg-white py-8">
+        <section class="bg-white pb-6 pt-0 md:py-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-duration="4200">
             <div class="container mx-auto px-4">
                 <h2 class="font-[Amaranth] text-[#0776C1] text-2xl md:text-[30px] md:text-center text-left mb-6 leading-tight"
                     data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-duration="4500">
@@ -570,55 +566,58 @@
                 <div class="flex flex-wrap justify-between gap-6">
                     <!-- CARD 1 -->
                     <div class="relative w-full md:w-[48%] lg:w-[32%] overflow-hidden" data-aos="fade-right"
-                        data-aos-offset="200" data-aos-duration="1000" data-aos-delay="200"
+                        data-aos-offset="200" data-aos-duration="1000" data-aos-delay="100"
                         data-aos-easing="ease-in-out">
+
                         <img src="assets/bud.webp" alt="" class="w-full h-auto" loading="lazy" decoding="async"
                             fetchpriority="low">
+
                         <div class="absolute bottom-0 left-0 right-0 bg-[#F58220] transition-all duration-500 ease-in-out"
                             id="classOverlay-1">
-                            <div class="p-4 flex justify-between items-center">
+                            <div class="p-4 flex justify-between items-center cursor-pointer hover:bg-white/10 transition duration-300 rounded-md"
+                                onclick="classCardToggle(1)">
                                 <h3 class="text-white font-[Poppins] font-semibold">
                                     BUD (Nursery: 3+ Years)
                                 </h3>
-                                <button onclick="classCardToggle(1)" id="classIcon-1">
+                                <span id="classIcon-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-4 h-4">
                                         <path d="M8 1v14M1 8h14" stroke="white" stroke-width="2"
                                             stroke-linecap="round" />
                                     </svg>
-                                </button>
+                                </span>
                             </div>
                             <div id="classContent-1"
                                 class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
                                 <hr class="border-white/50 my-2">
                                 <div class="px-4 pb-4">
                                     <p class="text-white font-[Poppins] text-sm leading-relaxed">
-                                        A fun-filled learning environment fostering creativity through play, stories,and
-                                        dance,
-                                        building a sound basis in language and cognitive skills.
+                                        A fun-filled learning environment fostering creativity through play, stories, and dance, building a sound basis in language and cognitive skills.
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+
                     <!-- CARD 2 -->
                     <div class="relative w-full md:w-[48%] lg:w-[32%] overflow-hidden" data-aos="fade-right"
-                        data-aos-offset="200" data-aos-duration="1000" data-aos-delay="300"
+                        data-aos-offset="200" data-aos-duration="1000" data-aos-delay="200"
                         data-aos-easing="ease-in-out">
                         <img src="assets/bloom.webp" alt="" class="w-full h-auto" loading="lazy" decoding="async"
                             fetchpriority="low">
                         <div class="absolute bottom-0 left-0 right-0 bg-[#F58220] transition-all duration-500 ease-in-out"
                             id="classOverlay-2">
-                            <div class="p-4 flex justify-between items-center">
+                            <div class="p-4 flex justify-between items-center cursor-pointer hover:bg-white/10 transition duration-300 rounded-md"
+                                onclick="classCardToggle(2)">
                                 <h3 class="text-white font-[Poppins] font-semibold">
                                     BLOOM (LKG: 4+ Years)
                                 </h3>
-                                <button onclick="classCardToggle(2)" id="classIcon-2">
+                                <span id="classIcon-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-4 h-4">
                                         <path d="M8 1v14M1 8h14" stroke="white" stroke-width="2"
                                             stroke-linecap="round" />
                                     </svg>
-                                </button>
+                                </span>
                             </div>
                             <div id="classContent-2"
                                 class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
@@ -635,23 +634,24 @@
 
                     <!-- CARD 3 -->
                     <div class="relative w-full md:w-[48%] lg:w-[32%] overflow-hidden" data-aos="fade-right"
-                        data-aos-offset="200" data-aos-duration="1000" data-aos-delay="400"
+                        data-aos-offset="200" data-aos-duration="1000" data-aos-delay="300"
                         data-aos-easing="ease-in-out">
                         <img src="assets/blossom.webp" alt="" class="w-full h-auto" loading="lazy" decoding="async"
                             fetchpriority="low">
 
                         <div class="absolute bottom-0 left-0 right-0 bg-[#F58220] transition-all duration-500 ease-in-out"
                             id="classOverlay-3">
-                            <div class="p-4 flex justify-between items-center">
+                            <div class="p-4 flex justify-between items-center cursor-pointer hover:bg-white/10 transition duration-300 rounded-md"
+                                onclick="classCardToggle(3)">
                                 <h3 class="text-white font-[Poppins] font-semibold">
                                     BLOSSOM (UKG: 5+ Years)
                                 </h3>
-                                <button onclick="classCardToggle(3)" id="classIcon-3">
+                                <span id="classIcon-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-4 h-4">
                                         <path d="M8 1v14M1 8h14" stroke="white" stroke-width="2"
                                             stroke-linecap="round" />
                                     </svg>
-                                </button>
+                                </span>
                             </div>
                             <div id="classContent-3"
                                 class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
@@ -670,7 +670,7 @@
             </div>
         </section>
 
-        <section class="bg-white py-8" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-duration="5000">
+        <section class="bg-white pb-6 pt-0 md:py-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-duration="5500">
             <div class="container mx-auto p-4 bg-[#0776C1]">
                 <div class="flex gap-8 items-center mb-6">
                     <h2 class="font-[Amaranth] text-[#FFF] text-2xl md:text-[30px] text-center leading-tight">Our
@@ -720,9 +720,9 @@
         </section>
 
 
-        <section class="bg-white py-8">
-            <div class="container mx-auto px-4">
-                <div class="flex justify-center items-center gap-x-6 mb-4">
+        <section class="bg-white pb-6 pt-0 md:py-6">
+            <div class="container mx-auto px-4" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-duration="2000" data-aos-delay="1000">
+                <div class="flex justify-center items-center gap-x-6 mb-6">
                     <img src="assets/star3.png" alt="" class="float-up-down md:w-[10%] lg:w-[7%] w-[20%]" loading="lazy"
                         decoding="async" fetchpriority="low">
                     <h2 class="font-[Amaranth] text-[#0776C1] text-2xl md:text-[30px] text-center leading-tight">Our
@@ -732,7 +732,6 @@
                 </div>
 
                 <div class="flex flex-wrap justify-between gap-2">
-                    <!-- Left Column -->
                     <div class="w-full md:w-[49%] flex gap-4">
                         <div class="w-1/2 flex flex-col gap-4">
                             <div class="relative overflow-hidden rounded-lg shadow-md">
@@ -751,7 +750,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Right Column -->
                     <div class="w-full md:w-[49%] flex gap-4">
                         <div class="w-1/2 flex flex-col gap-4 md:order-1 order-2">
                             <div class="relative overflow-hidden rounded-lg shadow-md">
@@ -766,7 +764,7 @@
                             </div>
                             <div class="relative overflow-hidden rounded-lg shadow-md">
                                 <img src="assets/g3.webp" alt="" loading="lazy" decoding="async" fetchpriority="low"
-                                    class="w-full md:h-[177px] h-[87px] object-cover transition-transform duration-300 ease-in-out hover:scale-105" />
+                                    class="w-full md:h-[177px] h-[90px] object-cover transition-transform duration-300 ease-in-out hover:scale-105" />
                             </div>
                         </div>
                     </div>
@@ -774,8 +772,8 @@
             </div>
         </section>
 
-        <section class="bg-white py-8">
-            <div class="container mx-auto px-4">
+        <section class="bg-white pb-6 pt-0 md:py-6">
+            <div class="container mx-auto px-4" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-duration="2000" data-aos-delay="1400">
                 <div class="relative">
                     <img src="assets/cta-banner.webp" alt="" class="w-full h-auto hidden md:block" loading="lazy"
                         decoding="async" fetchpriority="low">
@@ -794,9 +792,10 @@
                             the growth of essential skills.
                         </p>
                         <button data-modal-target="crud-modal" data-modal-toggle="crud-modal"
-                            class="bg-white text-black font-[Poppins] lg:text-2xl text-[16px] lg:px-8 md:px-8 px-6 py-2 border border-white hover:bg-gray-100 transition">
+                            class="bg-white text-black font-[Poppins] lg:text-2xl text-[16px] lg:px-8 md:px-8 px-6 py-2 border border-white rounded-md hover:bg-gray-100 hover:border-gray-300 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out">
                             Enrol Now!
                         </button>
+
                     </div>
 
                     <div
@@ -810,7 +809,6 @@
 
 
         <section class="bg-[#F1F9FF] relative overflow-hidden">
-            <!-- Decorative Images - Hidden on mobile for better performance -->
             <div
                 class="hidden md:block absolute top-0 left-0 w-1/2 opacity-80 pointer-events-none transition-all duration-500 hover:opacity-100">
                 <img src="assets/tech1.png" alt="" class="w-full h-auto" loading="lazy" decoding="async"
@@ -821,10 +819,8 @@
                 <img src="assets/tech2.png" alt="" class="w-full h-auto" loading="lazy" decoding="async"
                     fetchpriority="low">
             </div>
-
-            <div class="relative container mx-auto px-4 md:px-6">
-                <!-- Title Section -->
-                <div class="flex flex-row justify-center items-center gap-3 mb-2 md:mb-12">
+            <div class="relative container mx-auto px-4 md:px-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-duration="2000" data-aos-delay="1800">
+                <div class="flex flex-row justify-center items-center gap-3 mb-2 md:mb-6">
                     <h2
                         class="font-[Amaranth] text-[#0776C1] text-2xl md:text-[30px] md:text-center text-left leading-tight">
                         Digital Initiatives
@@ -852,34 +848,32 @@
                         <ul class="font-[Poppins] text-sm md:text-[16px] space-y-3 md:space-y-4 w-full max-w-md">
                             <li
                                 class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
-                                <strong class="hover:text-[#F5821F] transition-colors duration-200">Learn:</strong>
+                                <strong>Learn:</strong>
                                 Video tutorials, and concept cards
                             </li>
                             <li
                                 class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
-                                <strong class="hover:text-[#F5821F] transition-colors duration-200">Test:</strong>
+                                <strong>Test:</strong>
                                 Weekend, mock tests
                             </li>
                             <li
                                 class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
-                                <strong class="hover:text-[#F5821F] transition-colors duration-200">Practice:</strong>
+                                <strong>Practice:</strong>
                                 Customised solutions, progress tracking
                             </li>
                             <li
                                 class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
-                                <strong
-                                    class="hover:text-[#F5821F] transition-colors duration-200">Performance:</strong>
+                                <strong>Performance:</strong>
                                 Speed, accuracy, ranking
                             </li>
                             <li
                                 class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
-                                <strong class="hover:text-[#F5821F] transition-colors duration-200">Exams:</strong>
+                                <strong>Exams:</strong>
                                 Weekly, and biweekly tests
                             </li>
                         </ul>
                         <div class="mt-6 md:mt-8 w-full text-center md:text-left">
-                            <h3
-                                class="font-[Amaranth] text-[#0776C1] text-lg md:text-xl hover:text-[#F5821F] transition-colors duration-300">
+                            <h3 class="font-[Amaranth] text-[#0776C1] text-lg md:text-xl">
                                 Download the app
                             </h3>
                             <div class="flex justify-center md:justify-start gap-3 md:gap-4 mt-3 md:mt-4">
@@ -906,7 +900,7 @@
                 class="hidden md:block absolute bottom-0 right-0 opacity-80 pointer-events-none transition-all duration-500 hover:opacity-100">
                 <img src="assets/tech3.png" alt="" class="w-full h-auto">
             </div>
-            <div class="relative container mx-auto px-4 md:px-6">
+            <div class="relative container mx-auto px-4 md:px-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-duration="2000" data-aos-delay="2200">
                 <div class="flex flex-col md:flex-row gap-8 items-center">
                     <div class="w-full md:w-[49%] flex items-center justify-center mt-6 md:mt-0 md:order-1 order-2">
                         <div class="w-full max-w-md mx-auto">
@@ -933,33 +927,32 @@
                         <ul class="font-[Poppins] text-sm md:text-[16px] space-y-3 md:space-y-4 w-full max-w-md">
                             <li
                                 class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
-                                <strong class="hover:text-[#F5821F] transition-colors duration-200">Connect:</strong>
+                                <strong>Connect:</strong>
                                 Parents, students, school
                             </li>
                             <li
                                 class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
-                                <strong class="hover:text-[#F5821F] transition-colors duration-200">Updates:</strong>
+                                <strong>Updates:</strong>
                                 Attendance, academics, events
                             </li>
                             <li
                                 class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
-                                <strong class="hover:text-[#F5821F] transition-colors duration-200">Payments:</strong>
+                                <strong>Payments:</strong>
                                 Fees, reminders, tracking
                             </li>
                             <li
                                 class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
-                                <strong class="hover:text-[#F5821F] transition-colors duration-200">Engage:</strong>
+                                <strong>Engage:</strong>
                                 Teachers, staff, and concerns
                             </li>
                             <li
                                 class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
-                                <strong class="hover:text-[#F5821F] transition-colors duration-200">Leaves:</strong>
+                                <strong>Leaves:</strong>
                                 Requests, approvals, passes
                             </li>
                         </ul>
                         <div class="mt-6 md:mt-8 w-full text-center md:text-left">
-                            <h3
-                                class="font-[Amaranth] text-[#0776C1] text-lg md:text-xl hover:text-[#F5821F] transition-colors duration-300">
+                            <h3 class="font-[Amaranth] text-[#0776C1] text-lg md:text-xl">
                                 Download the app
                             </h3>
                             <div class="flex justify-center md:justify-start gap-3 md:gap-4 mt-3 md:mt-4">
@@ -978,8 +971,8 @@
             </div>
         </section>
 
-        <section class="bg-white py-10">
-            <div class="container mx-auto px-4">
+        <section class="bg-white pt-6 md:py-6">
+            <div class="container mx-auto px-4" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-duration="2000" data-aos-delay="2600">
                 <div class="flex flex-wrap justify-between gap-y-8">
                     <div class="w-full md:w-[49%]">
                         <div class="flex flex-col gap-6">
@@ -1034,8 +1027,8 @@
             </div>
         </section>
 
-        <section class="bg-white py-10">
-            <div class="container mx-auto px-4">
+        <section class="bg-white py-6">
+            <div class="container mx-auto px-4" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-duration="2000" data-aos-delay="3000">
                 <h2
                     class="font-[Amaranth] text-[#0776C1] text-2xl md:text-[30px] md:text-center text-left leading-tight mb-6">
                     Parents Testimonials</h2>
@@ -1046,8 +1039,9 @@
                                 <div class="flex flex-wrap justify-between">
                                     <div
                                         class="w-full md:w-[49%] relative flex items-center justify-center group cursor-pointer">
-                                        <video class="w-full rounded-lg shadow-md" poster="assets/vde-poster1.webp"
-                                            controls onclick="this.paused ? this.play() : this.pause()">
+                                        <video class="w-full rounded-lg shadow-md mb-4 md:mb-0"
+                                            poster="assets/vde-poster1.webp" controls
+                                            onclick="this.paused ? this.play() : this.pause()">
                                             <source src="your-video-file.mp4" type="video/mp4">
                                             Your browser does not support the video tag.
                                         </video>
@@ -1060,7 +1054,7 @@
                                     </div>
                                     <div class="w-full md:w-[49%]">
                                         <h2
-                                            class="font-[Amaranth] text-[#000] text-[30px] text-left leading-tight mb-4">
+                                            class="font-[Amaranth] text-[#000] text-[30px] text-left leading-tight md:mb-4 mb-2">
                                             Reyansh Devnanai Parents</h2>
                                         <p class="font-[Poppins] md:text-[18px] text-[16px] mb-4">CBSE XII - 2025</p>
                                         <p class="font-[Poppins] md:text-[16px] text-[15px]">
@@ -1138,19 +1132,13 @@
             </div>
         </section>
 
-        <section class="bg-white py-6">
-            <div class="container px-4 mx-auto">
-                <!-- Heading -->
-                <h2 class="font-[Amaranth] text-[#0776C1] md:text-center text-2xl md:text-[30px] text-left">Frequently
-                    Asked Questions</h2>
-
+        <section class="bg-white pb-8 pt-6 mt-6 md:mt-0">
+            <div class="container px-4 mx-auto" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-duration="2000" data-aos-delay="3400">
+                <h2 class="font-[Amaranth] text-[#0776C1] text-center text-2xl md:text-[30px] mb-6">Frequently Asked
+                    Questions</h2>
                 <div class="flex flex-wrap justify-center items-center">
                     <div class="md:w-[75%] w-full mx-auto">
-
-
-                        <!-- FAQ Accordions -->
                         <div class="flex flex-wrap jusitfy-center gap-[2%]">
-
                             <!-- Accordion Item -->
                             <div class="w-full bg-[#0776C1] my-2 rounded">
                                 <button onclick="faqAccordion(1)"
@@ -1451,6 +1439,7 @@
             new Splide("#testi", {
                 type: 'loop',
                 perPage: 1,
+                gap: 10,
                 pagination: false,
                 arrows: true,
                 focus: 'start',
