@@ -5,1425 +5,1255 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Narayana LP</title>
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-    </style>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <style>
-        .splide__arrows--ltr {
-            position: absolute;
-            bottom: 100px;
-            left: 56%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 20px;
-            z-index: 10;
-        }
-
-        .splide__arrows--ltr .splide__arrow {
-            position: relative;
-            top: 0;
-            background: #D9D9D9;
-            width: 48px;
-            height: 48px;
-            border-radius: 20%;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            opacity: 0.95;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            left: auto !important;
-            right: auto !important;
-        }
-
-        .splide__arrow svg {
-            fill: white;
-            width: 20px;
-            height: 20px;
-            filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2));
-        }
-
-        .splide__arrows--ltr .splide__arrow:active {
-            background-color: rgb(58, 58, 58);
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(0.9);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .splide__arrows--ltr .splide__arrow {
-                width: 40px;
-                height: 40px;
-            }
-
-            .splide__arrows--ltr {
-                bottom: -75px;
-                gap: 15px;
-                left: 50%;
-            }
-        }
-
-        .splide__arrows--gradient .splide__arrow {
-            background: linear-gradient(135deg, #0776C1 0%, #055a9c 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .splide__arrows--gradient .splide__arrow::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(to bottom right,
-                    rgba(255, 255, 255, 0) 0%,
-                    rgba(255, 255, 255, 0) 45%,
-                    rgba(255, 255, 255, 0.3) 50%,
-                    rgba(255, 255, 255, 0) 55%,
-                    rgba(255, 255, 255, 0) 100%);
-            transform: rotate(30deg);
-            transition: all 0.3s;
-        }
-
-        .splide__arrows--gradient .splide__arrow:hover::after {
-            left: 100%;
-            top: 100%;
-        }
-
-        @media (min-width: 768px) and (max-width: 1500px) {
-            .baby {
-                top: 18% !important;
-                width: 600px !important;
-            }
-        }
-
-        .star-heading::before {
-            animation: floatStar 2s ease-in-out infinite;
-        }
-
-        @keyframes floatStar {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        .float-up-down {
-            animation: floatUpDown 2.5s ease-in-out infinite;
-        }
-
-        @keyframes floatUpDown {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-15px);
-            }
-        }
-
-        .move-left-right {
-            animation: cloudFloatLR 4s ease-in-out infinite;
-        }
-
-        @keyframes cloudFloatLR {
-
-            0%,
-            100% {
-                transform: translateX(0);
-            }
-
-            50% {
-                transform: translateX(-20px);
-            }
-        }
-
-        .login-heading::before {
-            animation: wiggleIcon 2s ease-in-out infinite;
-        }
-
-        @keyframes wiggleIcon {
-
-            0%,
-            100% {
-                transform: translateX(0);
-            }
-
-            50% {
-                transform: translateX(6px);
-            }
-        }
-
-        .cloud-drift {
-            animation: driftLeftRight 4s ease-in-out infinite;
-        }
-
-        @keyframes driftLeftRight {
-
-            0%,
-            100% {
-                transform: translateX(0);
-            }
-
-            50% {
-                transform: translateX(15px);
-            }
-        }
-
-        .swing-rainbow {
-            transform-origin: top center;
-            animation: swingLeftRightSmooth 3s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
-        }
-
-        @keyframes swingLeftRightSmooth {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            25% {
-                transform: rotate(6deg);
-            }
-
-            50% {
-                transform: rotate(0deg);
-            }
-
-            75% {
-                transform: rotate(-6deg);
-            }
-
-            100% {
-                transform: rotate(0deg);
-            }
-        }
-
-        .float-updown {
-            animation: floatUpDown2 2.5s ease-in-out infinite;
-        }
-
-        @keyframes floatUpDown2 {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        @keyframes blinkFlash {
-
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0.5;
-            }
-        }
-
-        .flash-blink::before {
-            animation: blinkFlash 1.5s infinite ease-in-out;
-        }
-    </style>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+    <!-- ✅ Preload mobile hero image for better LCP -->
+    <link rel="preload" as="image" href="assets/mob-banner.webp" type="image/webp" media="(max-width: 768px)">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" as="style">
+    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Oswald:wght@200..700&family=Amaranth:wght@400;700&family=Agbalumo&family=Montserrat:wght@100..900&display=swap"
+        rel="stylesheet" media="all" onload="this.media='all'">
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet"
+        media="print" onload="this.media='all'">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&family=Oswald:wght@200..700&family=Amaranth:wght@400;700&family=Agbalumo&family=Montserrat:wght@100..900&display=swap"
+            rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    </noscript>
+    <link rel="preload" href="animations.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="animations.min.css">
+    </noscript>
 </head>
 
 <body>
 
-    <main>
-        <section id="pop-banner"
-            class="fixed top-0 left-0 bg-gradient-to-r from-[#098FEA] to-[#066EB5] py-[15px] w-full z-50 transition-all duration-500">
-            <div class="container mx-auto max-w-screen-xl px-4 relative">
-                <div class="flex flex-wrap items-center justify-center">
-                    <div class="flex items-center flex-col md:flex-row gap-y-4 gap-x-6">
-                        <p class="text-white font-semibold font-[Poppins]">Admission Open to a World of Wonder!</p>
-                        <button type="button" data-modal-target="crud-modal" data-modal-toggle="crud-modal"
-                            class="bg-gradient-to-r from-[#FF9F50] to-[#ED7A1C] hover:from-[#ed7a1c] hover:to-[#FF9F50]  hover:scale-105 transition-all duration-300 ease-in-out px-8 py-1 text-white rounded-[20px] border border-white font-[Poppins] shadow-md">
-                            Enrol Now!
-                        </button>
-                    </div>
-                </div>
-                <img src="assets/close-circle.webp" alt="Close" id="closeBanner"
-                    class="absolute right-3 lg:top-1 md:top-1 top-9 w-6 h-6 cursor-pointer" />
-            </div>
-        </section>
-
-        <header id="mainHeader" class="relative transition-all duration-500 lg:mt-[70px] md:mt-[65px] mt-[95px]">
-            <div class="container bg-white mx-auto p-4">
-                <div class="flex justify-center items-center">
-                    <img src="assets/logo.png" alt="logo" class="w-[350px] h-full">
-                </div>
-            </div>
-        </header>
-
-        <section class="relative w-full lg:h-[751px] h-[400px] md:h-[600px]">
-            <img src="assets/banner.webp" alt="banner" class="absolute inset-0 w-full h-full object-cover" width="1920"
-                height="751" loading="lazy" decoding="async" fetchpriority="low">
-            <div class="lg:absolute lg:bottom-0 lg:right-20 md:absolute md:bottom-0 md:right-10 bg-white p-6 lg:w-[550px] md:w-[450px] md:p-4 hidden md:block lg:block"
-                data-aos="fade-up" data-duration="2000">
-                <form action=""
-                    class="max-w-lg mx-auto p-4 mt-[400px] md:mt-[0px] lg:mt-0 border border-2 border-black rounded-lg md:border-none lg:border-none">
-                    <h2 class="text-2xl font-bold font-[Oswald] mb-8 text-center text-[#0776C1]">
-                        Admissions Open 2025-26
-                    </h2>
-
-                    <select title="Please select a class"
-                        class="border border-0 border-b-[1.5px] border-[#313030] p-2 w-full mb-6 font-[Poppins] focus:outline-none focus:ring-0"
-                        required>
-                        <option value="">Select Class</option>
-                        <option value="nursery">Nursery</option>
-                        <option value="kg">KG</option>
-                        <option value="class-1">Class 1</option>
-                        <option value="class-2">Class 2</option>
-                    </select>
-
-                    <input type="text" name="name" placeholder="Student Name"
-                        class="border border-0 border-b-[1.5px] border-[#313030] p-2 w-full mb-6 font-[Poppins] focus:outline-none focus:ring-0"
-                        required title="Please enter your name" />
-
-                    <input type="email" name="email" placeholder="Parent Email ID" title="Please enter a valid email ID"
-                        class="border border-0 border-b-[1.5px] border-[#313030] p-2 w-full mb-6 font-[Poppins] focus:outline-none focus:ring-0"
-                        required />
-
-                    <input type="tel" name="mobile" placeholder="Mobile Number"
-                        class="border-0 border-b-[1.5px] border-[#313030] p-2 w-full mb-6 font-[Poppins] focus:outline-none focus:ring-0 focus:border-[#0776C1]"
-                        required pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" />
-
-                    <select title="Please select a board"
-                        class="border border-0 border-b-[1.5px] border-[#313030] p-2 w-full mb-10 font-[Poppins] focus:outline-none focus:ring-0"
-                        required>
-                        <option value="">Select Board</option>
-                        <option value="cbse">CBSE</option>
-                        <option value="icse">ICSE</option>
-                        <option value="state-board">State Board</option>
-                        <option value="ib">IB</option>
-                    </select>
-
-                    <div class="flex justify-center">
-                        <button type="submit"
-                            class="relative text-white lg:px-52 px-28 py-3 bg-gradient-to-r from-[#FF9F50] to-[#ED7A1C] rounded-lg transition font-[Poppins] hover:opacity-90 
-                               after:content-[''] after:absolute after:ml-[10px] after:w-5 after:h-5 after:bg-[url('./assets/exit.png')] after:bg-contain after:bg-no-repeat">
-                            Submit
-                        </button>
-                    </div>
-                </form>
-            </div>
-
-        </section>
-
-        <section class="block md:hidden lg:hidden" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
-            data-duration="2000">
-            <div class="bg-white p-6 lg:w-[550px] md:w-[450px] md:p-4">
-                <form action=""
-                    class="max-w-lg mx-auto p-4 border border-2 border-black rounded-lg md:border-none lg:border-none">
-                    <h2 class="text-2xl font-bold font-[Oswald] mb-8 text-center text-[#0776C1]">
-                        Admissions Open 2025-26
-                    </h2>
-
-                    <select title="Please select a class"
-                        class="border border-0 border-b-[1.5px] border-[#313030] p-2 w-full mb-6 font-[Poppins] focus:outline-none focus:ring-0"
-                        required>
-                        <option value="">Select Class</option>
-                        <option value="nursery">Nursery</option>
-                        <option value="kg">KG</option>
-                        <option value="class-1">Class 1</option>
-                        <option value="class-2">Class 2</option>
-                    </select>
-
-                    <input type="text" name="name" placeholder="Student Name"
-                        class="border border-0 border-b-[1.5px] border-[#313030] p-2 w-full mb-6 font-[Poppins] focus:outline-none focus:ring-0"
-                        required title="Please enter your name" />
-
-                    <input type="email" name="email" placeholder="Parent Email ID" title="Please enter a valid email ID"
-                        class="border border-0 border-b-[1.5px] border-[#313030] p-2 w-full mb-6 font-[Poppins] focus:outline-none focus:ring-0"
-                        required />
-
-                    <input type="tel" name="mobile" placeholder="Mobile Number"
-                        class="border-0 border-b-[1.5px] border-[#313030] p-2 w-full mb-6 font-[Poppins] focus:outline-none focus:ring-0 focus:border-[#0776C1]"
-                        required pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" />
-
-                    <select title="Please select a board"
-                        class="border border-0 border-b-[1.5px] border-[#313030] p-2 w-full mb-10 font-[Poppins] focus:outline-none focus:ring-0"
-                        required>
-                        <option value="">Select Board</option>
-                        <option value="cbse">CBSE</option>
-                        <option value="icse">ICSE</option>
-                        <option value="state-board">State Board</option>
-                        <option value="ib">IB</option>
-                    </select>
-
-                    <div class="flex justify-center">
-                        <button type="submit"
-                            class="relative text-white lg:px-52 px-28 py-3 bg-gradient-to-r from-[#FF9F50] to-[#ED7A1C] rounded-lg transition font-[Poppins] hover:opacity-90 
-                               after:content-[''] after:absolute after:ml-[10px] after:w-5 after:h-5 after:bg-[url('./assets/exit.png')] after:bg-contain after:bg-no-repeat">
-                            Submit
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </section>
-
-
-        <section class="bg-white py-8">
-            <div class="container mx-auto px-4">
-                <div class="flex flex-col items-center justify-center text-left md:text-center">
-                    <h2 class="font-[Amaranth] text-[#0776C1] text-2xl md:text-[30px] md:text-center text-left mb-6 leading-tight"
-                        data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-duration="2500">Why Narayana
-                        is Different from Others?</h2>
-                    <p class="font-[Poppins] text-[16px]" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
-                        data-duration="3000">
-                        At Narayana, we take pride in our 46+ years legacy of excellence. Our approach, refined over the
-                        last 4+ decades, has led us to a process driven system which is in line with today's needs &
-                        requirements to ensure Overall Development of students. Through this system, we foster an
-                        environment where excellence thrives. At Narayana, it is your dreams that fuel our passion and
-                        perseverance because at Narayana, Your Dreams Are Our Dreams.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-
-        <section class="bg-white py-8">
-            <div class="container mx-auto px-4">
-                <div class="flex items-center justify-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
-                    data-duration="4000">
-                    <h2
-                        class="star-heading w-[300px] relative font-[Amaranth] text-[#0776C1] text-2xl md:text-[30px] text-center mb-6 leading-tight before:content-[''] before:absolute before:w-16 before:h-16 before:-top-10 md:before:-left-6 before:-left-4 before:bg-[url('./assets/star.png')] before:bg-contain before:bg-no-repeat">
-                        The Narayana Edge
-                    </h2>
-                </div>
-                <div class="flex flex-wrap items-center justify-between gap-4 h-auto">
-                    <div class="w-[40%] md:w-[30%] lg:w-[15%] bg-[#0776C1] px-4 py-8 flex justify-center items-center order-1 lg:order-1"
-                        data-aos="fade-right" data-aos-offset="200" data-aos-duration="1000" data-aos-delay="0"
-                        data-aos-easing="ease-in-out">
-                        <p class="text-[#FFF] text-[18px] leading-tight text-center">Integrated<br />Curriculum</p>
-                    </div>
-
-                    <div class="w-[40%] md:w-[30%] lg:w-[15%] bg-[#F98B2F] px-4 py-8 flex justify-center items-center order-2 lg:order-2"
-                        data-aos="fade-right" data-aos-offset="200" data-aos-duration="1000" data-aos-delay="200"
-                        data-aos-easing="ease-in-out">
-                        <p class="text-[#FFF] text-[18px] leading-tight text-center">Well-planned<br />microschedules
-                        </p>
-                    </div>
-
-                    <div class="w-[40%] md:w-[30%] lg:w-[15%] bg-[#0776C1] px-4 py-8 flex justify-center items-center order-4 lg:order-3"
-                        data-aos="fade-right" data-aos-offset="200" data-aos-duration="1000" data-aos-delay="400"
-                        data-aos-easing="ease-in-out">
-                        <p class="text-[#FFF] text-[18px] leading-tight text-center">Pioneering<br />R&D Team</p>
-                    </div>
-
-                    <div class="w-[40%] md:w-[30%] lg:w-[15%] bg-[#F98B2F] px-4 py-8 flex justify-center items-center order-3 lg:order-4"
-                        data-aos="fade-right" data-aos-offset="200" data-aos-duration="1000" data-aos-delay="600"
-                        data-aos-easing="ease-in-out">
-                        <p class="text-[#FFF] text-[18px] leading-tight text-center">Tech-enabled<br />framework</p>
-                    </div>
-
-                    <div class="w-[40%] md:w-[30%] lg:w-[15%] bg-[#0776C1] px-4 py-8 flex justify-center items-center order-3 lg:order-5"
-                        data-aos="fade-right" data-aos-offset="200" data-aos-duration="1000" data-aos-delay="800"
-                        data-aos-easing="ease-in-out">
-                        <p class="text-[#FFF] text-[18px] leading-tight text-center">Pioneering<br />R&D Team</p>
-                    </div>
-
-                    <div class="w-[40%] md:w-[30%] lg:w-[15%] bg-[#F98B2F] px-4 py-8 flex justify-center items-center order-5 lg:order-6"
-                        data-aos="fade-right" data-aos-offset="200" data-aos-duration="1000" data-aos-delay="1000"
-                        data-aos-easing="ease-in-out">
-                        <p class="text-[#FFF] text-[18px] leading-tight text-center">Tech-enabled<br />framework</p>
-                    </div>
-                </div>
-
-            </div>
-            </div>
-        </section>
-
-
-        <section class="bg-white pb-6 pt-0 md:py-6 relative">
-            <img src="assets/baby.webp" alt="" class="absolute top-0 left-0 w-auto baby mb-8" loading="lazy" decoding="async"
-                fetchpriority="low" data-aos="fade-right" data-aos-offset="200" data-aos-duration="1000"
-                data-aos-delay="0" data-aos-easing="ease-in-out">
-
-            <div class="container mx-auto flex flex-col md:flex-row px-4 gap-y-6">
-                <div class="relative w-full md:w-1/2 h-[300px] md:h-[730px] mb-[30px] md:mb-0">
-                    <img src="assets/star2.png" alt="" loading="lazy" decoding="async" fetchpriority="low"
-                        class="float-up-down absolute top-0 right-0 md:right-[185px] z-20 w-[100px] h-[100px] md:w-auto md:h-auto">
-                    <img src="assets/cloud.png" alt="" loading="lazy" decoding="async" fetchpriority="low"
-                        class="move-left-right absolute -bottom-10 md:bottom-0 md:right-20 right-0 z-40 w-[100px] h-auto md:w-auto">
-                </div>
-                <div class="w-full md:w-1/2 mt-10 md:mt-4 pt-[35px] md:pt-0" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
-                    data-duration="4500">
-                    <div class="md:mb-8 mb-4">
-                        <h2
-                            class="font-[Amaranth] text-white text-2xl md:text-[30px] text-center leading-tight bg-[#0776C1] px-6 py-3 w-full max-w-md mb-6">
-                            Age: 3 to 5 | Nursery - U.K.G
-                        </h2>
-                        <p class="font-[Poppins] max-w-[700px] md:text-[16px] text-[15px]">
-                            Designed for children from ages 3 to 5, our age appropriate curriculum offers personalised
-                            care, ensuring that your child receives the best early education in a secure, hygienic
-                            space.
-                        </p>
-                    </div>
-                    <div class="flex flex-col md:flex-row gap-4 md:mb-8 mb-6">
-                        <ul class="font-[Poppins] text-[16px] space-y-3">
-                            <li
-                                class="relative pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-5 before:h-5 before:bg-[url('assets/verify.png')] before:bg-contain before:bg-no-repeat">
-                                Age appropriate curriculum
-                            </li>
-                            <li
-                                class="relative pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-5 before:h-5 before:bg-[url('assets/verify.png')] before:bg-contain before:bg-no-repeat">
-                                Personal attention
-                            </li>
-                            <li
-                                class="relative pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-5 before:h-5 before:bg-[url('assets/verify.png')] before:bg-contain before:bg-no-repeat">
-                                Safety
-                            </li>
-                        </ul>
-
-                        <ul class="font-[Poppins] text-[16px] space-y-3">
-                            <li
-                                class="relative pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-5 before:h-5 before:bg-[url('assets/verify.png')] before:bg-contain before:bg-no-repeat">
-                                Infrastructure
-                            </li>
-                            <li
-                                class="relative pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-5 before:h-5 before:bg-[url('assets/verify.png')] before:bg-contain before:bg-no-repeat">
-                                CCTV camera
-                            </li>
-                            <li
-                                class="relative pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-5 before:h-5 before:bg-[url('assets/verify.png')] before:bg-contain before:bg-no-repeat">
-                                Transportation
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="login-heading relative font-[Amaranth] text-[#0776C1] md:text-[20px] text-[19px] mb-4 leading-tight pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-5 before:h-5 before:bg-[url('assets/login.png')] before:bg-contain before:bg-no-repeat"
-                            data-aos="fade-right" data-aos-offset="200" data-aos-duration="1000" data-aos-delay="0"
-                            data-aos-easing="ease-in-out">
-                            Why Pre-primary Education Matters?
-                        </h3>
-
-                        <p class="font-[Poppins] max-w-[700px] text-[16px] mb-6">
-                            The early years from birth to age 5 are critical in shaping a child's future. Pre-primary
-                            education is essential for brain development, fostering essential skills that support
-                            well-rounded growth.
-                        </p>
-                        <h3 class="login-heading relative font-[Amaranth] text-[#0776C1] md:text-[20px] text-[19px] mb-4 leading-tight pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-5 before:h-5 before:bg-[url('assets/login.png')] before:bg-contain before:bg-no-repeat"
-                            data-aos="fade-right" data-aos-offset="200" data-aos-duration="1200" data-aos-delay="0"
-                            data-aos-easing="ease-in-out">
-                            Age Appropriate Curriculum</h3>
-                        <p class="font-[Poppins] max-w-[700px] text-[16px]">
-                            Supported by our dedicated R&D team, which thoroughly understands the unique developmental
-                            needs of children in this age group, we create tailored curricula and activities that foster
-                            the growth of essential skills.
-                        </p>
-                    </div>
-
-                    <div class="md:mt-10 mt-6">
-                        <button type="button" data-modal-target="crud-modal" data-modal-toggle="crud-modal"
-                            class="bg-gradient-to-r from-[#FF9F50] to-[#ED7A1C] hover:from-[#ED7A1C] hover:to-[#FF9F50] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out px-8 py-2 text-white rounded-[20px] border border-white font-[Poppins]">
-                            Enrol Now!
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <section class="bg-white pb-6 pt-0 md:py-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-duration="2000">
-            <div class="container mx-auto px-4">
-                <h2 class="font-[Amaranth] text-[#0776C1] text-2xl md:text-[30px] md:text-center text-left mb-6 leading-tight"
-                    data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-duration="4500">
-                    Our Classes for Young Learners
-                </h2>
-                <div class="flex flex-wrap justify-between gap-6">
-                    <!-- CARD 1 -->
-                    <div class="relative w-full md:w-[48%] lg:w-[32%] overflow-hidden" data-aos="fade-right"
-                        data-aos-offset="200" data-aos-duration="1000" data-aos-delay="100"
-                        data-aos-easing="ease-in-out">
-
-                        <img src="assets/bud.webp" alt="" class="w-full h-auto" loading="lazy" decoding="async"
-                            fetchpriority="low">
-
-                        <div class="absolute bottom-0 left-0 right-0 bg-[#F58220] transition-all duration-500 ease-in-out"
-                            id="classOverlay-1">
-                            <div class="p-4 flex justify-between items-center cursor-pointer hover:bg-white/10 transition duration-300 rounded-md"
-                                onclick="classCardToggle(1)">
-                                <h3 class="text-white font-[Poppins] font-semibold">
-                                    BUD (Nursery: 3+ Years)
-                                </h3>
-                                <span id="classIcon-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-4 h-4">
-                                        <path d="M8 1v14M1 8h14" stroke="white" stroke-width="2"
-                                            stroke-linecap="round" />
-                                    </svg>
-                                </span>
-                            </div>
-                            <div id="classContent-1"
-                                class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                                <hr class="border-white/50 my-2">
-                                <div class="px-4 pb-4">
-                                    <p class="text-white font-[Poppins] text-sm leading-relaxed">
-                                        A fun-filled learning environment fostering creativity through play, stories, and dance, building a sound basis in language and cognitive skills.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- CARD 2 -->
-                    <div class="relative w-full md:w-[48%] lg:w-[32%] overflow-hidden" data-aos="fade-right"
-                        data-aos-offset="200" data-aos-duration="1000" data-aos-delay="200"
-                        data-aos-easing="ease-in-out">
-                        <img src="assets/bloom.webp" alt="" class="w-full h-auto" loading="lazy" decoding="async"
-                            fetchpriority="low">
-                        <div class="absolute bottom-0 left-0 right-0 bg-[#F58220] transition-all duration-500 ease-in-out"
-                            id="classOverlay-2">
-                            <div class="p-4 flex justify-between items-center cursor-pointer hover:bg-white/10 transition duration-300 rounded-md"
-                                onclick="classCardToggle(2)">
-                                <h3 class="text-white font-[Poppins] font-semibold">
-                                    BLOOM (LKG: 4+ Years)
-                                </h3>
-                                <span id="classIcon-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-4 h-4">
-                                        <path d="M8 1v14M1 8h14" stroke="white" stroke-width="2"
-                                            stroke-linecap="round" />
-                                    </svg>
-                                </span>
-                            </div>
-                            <div id="classContent-2"
-                                class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                                <hr class="border-white/50 my-2">
-                                <div class="px-4 pb-4">
-                                    <p class="text-white font-[Poppins] text-sm leading-relaxed">
-                                        A vibrant environment to build foundational literacy, numeracy & social skills
-                                        through structured learning.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- CARD 3 -->
-                    <div class="relative w-full md:w-[48%] lg:w-[32%] overflow-hidden" data-aos="fade-right"
-                        data-aos-offset="200" data-aos-duration="1000" data-aos-delay="300"
-                        data-aos-easing="ease-in-out">
-                        <img src="assets/blossom.webp" alt="" class="w-full h-auto" loading="lazy" decoding="async"
-                            fetchpriority="low">
-
-                        <div class="absolute bottom-0 left-0 right-0 bg-[#F58220] transition-all duration-500 ease-in-out"
-                            id="classOverlay-3">
-                            <div class="p-4 flex justify-between items-center cursor-pointer hover:bg-white/10 transition duration-300 rounded-md"
-                                onclick="classCardToggle(3)">
-                                <h3 class="text-white font-[Poppins] font-semibold">
-                                    BLOSSOM (UKG: 5+ Years)
-                                </h3>
-                                <span id="classIcon-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-4 h-4">
-                                        <path d="M8 1v14M1 8h14" stroke="white" stroke-width="2"
-                                            stroke-linecap="round" />
-                                    </svg>
-                                </span>
-                            </div>
-                            <div id="classContent-3"
-                                class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-                                <hr class="border-white/50 my-2">
-                                <div class="px-4 pb-4">
-                                    <p class="text-white font-[Poppins] text-sm leading-relaxed">
-                                        Preparing learners for primary education with focus on cognitive & emotional
-                                        readiness.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section class="bg-white pb-6 pt-0 md:py-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-duration="2000">
-            <div class="container mx-auto p-4 bg-[#0776C1]">
-                <div class="flex gap-8 items-center mb-6">
-                    <h2 class="font-[Amaranth] text-[#FFF] text-2xl md:text-[30px] text-center leading-tight">Our
-                        Fraternity</h2>
-                    <img src="assets/cloud.png" alt="" class="cloud-drift w-20 h-auto" loading="lazy" decoding="async"
-                        fetchpriority="low">
-                </div>
-                <p class="font-[Poppins] md:text-[16px] text-[15px] text-[#FFF] mb-6">
-                    Supported by our dedicated R&D team, which thoroughly understands the unique developmental needs of
-                    children in this age group, we create tailored curricula and activities that foster the growth of
-                    essential skills.
-                </p>
-                <div class="flex flex-wrap justify-between gap-4">
-
-                    <div
-                        class="flex-1 md:flex-initial bg-[#3A8DD4] rounded-md px-6 py-4 w-[50%] md:w-[120px] text-center flex flex-wrap justify-center items-center gap-x-4">
-                        <p class="text-white text-4xl font-normal font-[Agbalumo]">23</p>
-                        <p class="text-white text-xl font-[Poppins]">State</p>
-                    </div>
-
-                    <div
-                        class="flex-2 md:flex-0 bg-[#045FA3] rounded-md px-6 py-4 w-[50%] md:w-[160px] text-center flex flex-wrap justify-center items-center gap-x-4">
-                        <p class="text-white text-4xl font-normal font-[Agbalumo]">250+</p>
-                        <p class="text-white text-xl font-[Poppins]">Cities</p>
-                    </div>
-
-                    <div
-                        class="flex-1 md:flex-0 bg-[#045FA3] rounded-md px-6 py-4 w-[50%] md:w-[300px] text-center flex flex-wrap justify-center items-center gap-x-4">
-                        <p class="text-white text-4xl font-normal font-[Agbalumo]">900+</p>
-                        <p class="text-white text-xl font-[Poppins]">Educational<br>Institutions</p>
-                    </div>
-
-                    <div
-                        class="flex-1 md:flex-0 bg-[#045FA3] rounded-md px-6 py-4 w-[50%] md:w-[350px] text-center flex flex-wrap justify-center items-center gap-x-4">
-                        <p class="text-white text-4xl font-normal font-[Agbalumo]">600000+ </p>
-                        <p class="text-white text-xl font-[Poppins]">Learners<br>Annually</p>
-                    </div>
-
-                    <div
-                        class="flex-1 md:flex-0 bg-[#045FA3] rounded-md px-6 py-4 w-[50%] md:w-[200px] text-center flex flex-wrap justify-center items-center gap-x-4">
-                        <p class="text-white text-4xl font-normal font-[Agbalumo]">900+ </p>
-                        <p class="text-white text-xl font-[Poppins]">Educational<br>Institutions</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-
-        <section class="bg-white pb-6 pt-0 md:py-6">
-            <div class="container mx-auto px-4" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-duration="2000" data-aos-delay="500">
-                <div class="flex justify-center items-center gap-x-6 mb-6">
-                    <img src="assets/star3.png" alt="" class="float-up-down md:w-[10%] lg:w-[7%] w-[20%]" loading="lazy"
-                        decoding="async" fetchpriority="low">
-                    <h2 class="font-[Amaranth] text-[#0776C1] text-2xl md:text-[30px] text-center leading-tight">Our
-                        Gallery</h2>
-                    <img src="assets/rainbow.png" alt="" class="swing-rainbow md:w-[10%] lg:w-[7%] w-[20%]"
-                        loading="lazy" decoding="async" fetchpriority="low">
-                </div>
-
-                <div class="flex flex-wrap justify-between gap-2">
-                    <div class="w-full md:w-[49%] flex gap-4">
-                        <div class="w-1/2 flex flex-col gap-4">
-                            <div class="relative overflow-hidden rounded-lg shadow-md">
-                                <img src="assets/g5.webp" alt="" loading="lazy" decoding="async" fetchpriority="low"
-                                    class="w-full md:h-[495px] h-[260px] object-cover transition-transform duration-300 ease-in-out hover:scale-105" />
-                            </div>
-                        </div>
-                        <div class="w-1/2 flex flex-col gap-4">
-                            <div class="relative overflow-hidden rounded-lg shadow-md">
-                                <img src="assets/g1.webp" alt="" loading="lazy" decoding="async" fetchpriority="low"
-                                    class="w-full md:h-[220px] h-[110px] object-cover transition-transform duration-300 ease-in-out hover:scale-105" />
-                            </div>
-                            <div class="relative overflow-hidden rounded-lg shadow-md">
-                                <img src="assets/g4.webp" alt="" loading="lazy" decoding="async" fetchpriority="low"
-                                    class="w-full md:h-[262px] h-[131px] object-cover transition-transform duration-300 ease-in-out hover:scale-105" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-[49%] flex gap-4">
-                        <div class="w-1/2 flex flex-col gap-4 md:order-1 order-2">
-                            <div class="relative overflow-hidden rounded-lg shadow-md">
-                                <img src="assets/g6.webp" alt="" loading="lazy" decoding="async" fetchpriority="low"
-                                    class="w-full md:h-[495px] h-[260px] object-cover transition-transform duration-300 ease-in-out hover:scale-105" />
-                            </div>
-                        </div>
-                        <div class="w-1/2 flex flex-col gap-4 md:order-2 order-1">
-                            <div class="relative overflow-hidden rounded-lg shadow-md">
-                                <img src="assets/g2.webp" alt="" loading="lazy" decoding="async" fetchpriority="low"
-                                    class="w-full md:h-[305px] h-[151px] object-cover transition-transform duration-300 ease-in-out hover:scale-105" />
-                            </div>
-                            <div class="relative overflow-hidden rounded-lg shadow-md">
-                                <img src="assets/g3.webp" alt="" loading="lazy" decoding="async" fetchpriority="low"
-                                    class="w-full md:h-[177px] h-[90px] object-cover transition-transform duration-300 ease-in-out hover:scale-105" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="bg-white pb-6 pt-0 md:py-6">
-            <div class="container mx-auto px-4" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-duration="2000" data-aos-delay="1000">
-                <div class="relative">
-                    <img src="assets/cta-banner.webp" alt="" class="w-full h-auto hidden md:block" loading="lazy"
-                        decoding="async" fetchpriority="low">
-                    <img src="assets/mob-cta.webp" alt="" class="w-full h-auto block md:hidden" loading="lazy"
-                        decoding="async" fetchpriority="low">
-                    <div
-                        class="absolute top-1/2 lg:left-8 lg:left-6 left-2 transform -translate-y-[100%] md:-translate-y-1/2 md:w-[45%] w-full text-white">
-                        <h2
-                            class="font-[Amaranth] text-[#FFF] lg:text-[30px] text-2xl md:text-[20px] text-left lg:mb-4 md:mb-2 mb-4 leading-tight">
-                            Admissions Open
-                            2025 - 26</h2>
-                        <p
-                            class="font-[Poppins] text-[16px] md:text-[15px] lg:text-[16px] text-[#FFF] lg:mb-6 md:mb-2 mb-6 leading-relaxed max-w-[95%]">
-                            Supported by our dedicated R&D team, which thoroughly understands the unique developmental
-                            needs of children in this age group, we create tailored curricula and activities that foster
-                            the growth of essential skills.
-                        </p>
-                        <button data-modal-target="crud-modal" data-modal-toggle="crud-modal"
-                            class="bg-white text-black font-[Poppins] lg:text-2xl text-[16px] lg:px-8 md:px-8 px-6 py-2 border border-white rounded-md hover:bg-gray-100 hover:border-gray-300 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out">
-                            Enrol Now!
-                        </button>
-
-                    </div>
-
-                    <div
-                        class="absolute md:top-0 lg:top-5 top-[60%] left-3 md:right-0 md:w-auto w-[45%] flex md:justify-end">
-                        <img src="assets/biub.png" alt="" class="float-updown h-auto w-[50%] md:w-[15%] lg:w-auto"
-                            loading="lazy" decoding="async" fetchpriority="low">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <section class="bg-[#F1F9FF] relative overflow-hidden">
-            <div
-                class="hidden md:block absolute top-0 left-0 w-1/2 opacity-80 pointer-events-none transition-all duration-500 hover:opacity-100">
-                <img src="assets/tech1.png" alt="" class="w-full h-auto" loading="lazy" decoding="async"
-                    fetchpriority="low">
-            </div>
-            <div
-                class="hidden md:block absolute bottom-0 right-0 w-1/2 opacity-80 pointer-events-none transition-all duration-500 hover:opacity-100">
-                <img src="assets/tech2.png" alt="" class="w-full h-auto" loading="lazy" decoding="async"
-                    fetchpriority="low">
-            </div>
-            <div class="relative container mx-auto px-4 md:px-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-duration="2000" data-aos-delay="2000">
-                <div class="flex flex-row justify-center items-center gap-3 mb-2 md:mb-6">
-                    <h2
-                        class="font-[Amaranth] text-[#0776C1] text-2xl md:text-[30px] md:text-center text-left leading-tight">
-                        Digital Initiatives
-                    </h2>
-                    <img src="assets/rainbow.png" alt="" loading="lazy" decoding="async" fetchpriority="low"
-                        class="swing-rainbow w-20 md:w-24 hover:rotate-6 transition-transform duration-300">
-                </div>
-                <div class="flex flex-col md:flex-row gap-8 items-center">
-                    <div
-                        class="w-full md:w-[49%] flex justify-center flex-col items-center md:items-start max-w-full md:max-w-[80%]">
-                        <div
-                            class="flex items-center mb-6 md:mb-8 group md:max-w-[350px] lg:max-w-[450px] max-w-[320px] justify-center md:justify-start">
-                            <div
-                                class="bg-[#4782ED] text-white w-20 h-16 md:w-15 md:h-15 lg:w-20 lg:h-20 flex justify-center items-center rounded-full text-sm font-bold relative z-10 border-2 border-[#F5821F] group-hover:bg-[#F5821F] group-hover:scale-110 transition-all duration-300">
-                                <h3 class="font-[Montserrat] text-3xl md:text-4xl text-white">1</h3>
-                            </div>
-                            <div
-                                class="-ml-6 md:-ml-8 bg-[#F5821F] md:w-[400px] w-full text-white px-8 md:px-16 py-3 md:py-3 rounded-md group-hover:bg-[#4782ED] transition-colors duration-300">
-                                <p
-                                    class="font-[Amaranth] text-[24px] lg:text-[30px] md:text-[20px] text-center leading-tight">
-                                    N-Learn
-                                    App</p>
-                            </div>
-                        </div>
-                        <ul class="font-[Poppins] text-sm md:text-[16px] space-y-3 md:space-y-4 w-full max-w-md">
-                            <li
-                                class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
-                                <strong>Learn:</strong>
-                                Video tutorials, and concept cards
-                            </li>
-                            <li
-                                class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
-                                <strong>Test:</strong>
-                                Weekend, mock tests
-                            </li>
-                            <li
-                                class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
-                                <strong>Practice:</strong>
-                                Customised solutions, progress tracking
-                            </li>
-                            <li
-                                class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
-                                <strong>Performance:</strong>
-                                Speed, accuracy, ranking
-                            </li>
-                            <li
-                                class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
-                                <strong>Exams:</strong>
-                                Weekly, and biweekly tests
-                            </li>
-                        </ul>
-                        <div class="mt-6 md:mt-8 w-full text-center md:text-left">
-                            <h3 class="font-[Amaranth] text-[#0776C1] text-lg md:text-xl">
-                                Download the app
-                            </h3>
-                            <div class="flex justify-center md:justify-start gap-3 md:gap-4 mt-3 md:mt-4">
-                                <a href="#" class="hover:scale-105 transition-transform duration-300">
-                                    <img src="assets/gpay.png" alt="Google Play" class="w-28 md:w-32 lg:w-40">
-                                </a>
-                                <a href="#" class="hover:scale-105 transition-transform duration-300">
-                                    <img src="assets/apstr.png" alt="App Store" class="w-28 md:w-32 lg:w-40">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-[49%] flex items-center justify-center mt-6 md:mt-0">
-                        <div class="w-full max-w-md mx-auto">
-                            <img src="assets/n-learn-app.webp" alt="N-Learn App" class="w-full h-auto">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="bg-[#FCFFF1] relative overflow-hidden py-10">
-            <div
-                class="hidden md:block absolute bottom-0 right-0 opacity-80 pointer-events-none transition-all duration-500 hover:opacity-100">
-                <img src="assets/tech3.png" alt="" class="w-full h-auto">
-            </div>
-            <div class="relative container mx-auto px-4 md:px-6" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-duration="2000" data-aos-delay="2000">
-                <div class="flex flex-col md:flex-row gap-8 items-center">
-                    <div class="w-full md:w-[49%] flex items-center justify-center mt-6 md:mt-0 md:order-1 order-2">
-                        <div class="w-full max-w-md mx-auto">
-                            <img src="assets/nconnect-app.webp" alt="N-Learn App" class="w-full h-auto" loading="lazy"
-                                decoding="async" fetchpriority="low">
-                        </div>
-                    </div>
-                    <div
-                        class="w-full md:w-[49%] flex justify-center flex-col items-center md:items-start max-w-full md:max-w-[80%] md:order-2 order-1">
-                        <div
-                            class="flex items-center mb-6 md:mb-8 group md:max-w-[350px] lg:max-w-[450px] max-w-[320px]  justify-center md:justify-start">
-                            <div
-                                class="bg-[#4782ED] text-white w-20 h-16 md:w-15 md:h-15 lg:w-20 lg:h-20 flex justify-center items-center rounded-full text-sm font-bold relative z-10 border-2 border-[#F5821F] group-hover:bg-[#F5821F] group-hover:scale-110 transition-all duration-300">
-                                <h3 class="font-[Montserrat] text-3xl md:text-4xl text-white">2</h3>
-                            </div>
-                            <div
-                                class="-ml-6 md:-ml-8 bg-[#F5821F] md:w-[400px] w-full text-white px-8 md:px-16 py-3 md:py-3 rounded-md group-hover:bg-[#4782ED] transition-colors duration-300">
-                                <p
-                                    class="font-[Amaranth] text-[24px] lg:text-[30px] md:text-[20px] text-center leading-tight">
-                                    NConnect
-                                    App</p>
-                            </div>
-                        </div>
-                        <ul class="font-[Poppins] text-sm md:text-[16px] space-y-3 md:space-y-4 w-full max-w-md">
-                            <li
-                                class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
-                                <strong>Connect:</strong>
-                                Parents, students, school
-                            </li>
-                            <li
-                                class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
-                                <strong>Updates:</strong>
-                                Attendance, academics, events
-                            </li>
-                            <li
-                                class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
-                                <strong>Payments:</strong>
-                                Fees, reminders, tracking
-                            </li>
-                            <li
-                                class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
-                                <strong>Engage:</strong>
-                                Teachers, staff, and concerns
-                            </li>
-                            <li
-                                class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
-                                <strong>Leaves:</strong>
-                                Requests, approvals, passes
-                            </li>
-                        </ul>
-                        <div class="mt-6 md:mt-8 w-full text-center md:text-left">
-                            <h3 class="font-[Amaranth] text-[#0776C1] text-lg md:text-xl">
-                                Download the app
-                            </h3>
-                            <div class="flex justify-center md:justify-start gap-3 md:gap-4 mt-3 md:mt-4">
-                                <a href="#" class="hover:scale-105 transition-transform duration-300">
-                                    <img src="assets/gpay.png" alt="Google Play" class="w-28 md:w-32 lg:w-40"
-                                        loading="lazy" decoding="async" fetchpriority="low">
-                                </a>
-                                <a href="#" class="hover:scale-105 transition-transform duration-300">
-                                    <img src="assets/apstr.png" alt="App Store" class="w-28 md:w-32 lg:w-40"
-                                        loading="lazy" decoding="async" fetchpriority="low">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="bg-white pt-6 md:py-6">
-            <div class="container mx-auto px-4" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-duration="2000" data-aos-delay="2000">
-                <div class="flex flex-wrap justify-between gap-y-8">
-                    <div class="w-full md:w-[49%]">
-                        <div class="flex flex-col gap-6">
-                            <img src="assets/classroom.webp" alt="" class="w-full h-full rounded-[30px] shadow-md"
-                                loading="lazy" decoding="async" fetchpriority="low">
-                            <div
-                                class="flex items-center group md:max-w-[350px] lg:max-w-[450px] max-w-[320px]  justify-center md:justify-start">
-                                <div
-                                    class="bg-[#4782ED] text-white w-20 h-16 md:w-15 md:h-15 lg:w-20 lg:h-20 flex justify-center items-center rounded-full text-sm font-bold relative z-10 border-2 border-[#F5821F] group-hover:bg-[#F5821F] group-hover:scale-110 transition-all duration-300">
-                                    <h3 class="font-[Montserrat] text-3xl md:text-4xl text-white">3</h3>
-                                </div>
-                                <div
-                                    class="-ml-6 md:-ml-8 bg-[#F5821F] md:w-[400px] w-full text-white px-8 md:px-16 py-3 md:py-3 rounded-md group-hover:bg-[#4782ED] transition-colors duration-300">
-                                    <p
-                                        class="font-[Amaranth] text-[24px] lg:text-[30px] md:text-[20px] text-center leading-tight">
-                                        Digital Classroom</p>
-                                </div>
-                            </div>
-                            <p class="font-[Poppins] md:text-16px text-[15px]">
-                                To keep pace with the tech-savvy world, we have seamlessly integrated technology with
-                                education. The introduction of digital classrooms at Narayana Group of Schools enriches
-                                students’ understanding of critical concepts.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-[49%]">
-                        <div class="flex flex-col gap-6">
-                            <img src="assets/robotics.webp" alt="" class="w-full h-full rounded-[30px] shadow-md"
-                                loading="lazy" decoding="async" fetchpriority="low">
-                            <div
-                                class="flex items-center group md:max-w-[350px] lg:max-w-[450px] max-w-[320px]  justify-center md:justify-start">
-                                <div
-                                    class="bg-[#4782ED] text-white w-20 h-16 md:w-15 md:h-15 lg:w-20 lg:h-20 flex justify-center items-center rounded-full text-sm font-bold relative z-10 border-2 border-[#F5821F] group-hover:bg-[#F5821F] group-hover:scale-110 transition-all duration-300">
-                                    <h3 class="font-[Montserrat] text-3xl md:text-4xl text-white">4</h3>
-                                </div>
-                                <div
-                                    class="-ml-6 md:-ml-8 bg-[#F5821F] md:w-[400px] w-full text-white px-8 md:px-16 py-3 md:py-3 rounded-md group-hover:bg-[#4782ED] transition-colors duration-300">
-                                    <p
-                                        class="font-[Amaranth] text-[24px] lg:text-[30px] md:text-[20px] text-center leading-tight">
-                                        Robotics</p>
-                                </div>
-                            </div>
-                            <p class="font-[Poppins] md:text-[16px] text-[15px]">
-                                Explore the world of robotics at Narayana Schools where technology and innovation meet
-                                comprehensive education. Our dynamic robotics curriculum empowers students with
-                                practical knowledge in the fields of STEM, fostering critical thinking and
-                                problem-solving skills.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="bg-white py-6">
-            <div class="container mx-auto px-4" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-duration="2000" data-aos-delay="2000">
-                <h2
-                    class="font-[Amaranth] text-[#0776C1] text-2xl md:text-[30px] md:text-center text-left leading-tight mb-6">
-                    Parents Testimonials</h2>
-                <div class="splide" id="testi" aria-label="Splide Basic HTML Example">
-                    <div class="splide__track">
-                        <ul class="splide__list">
-                            <li class="splide__slide">
-                                <div class="flex flex-wrap justify-between">
-                                    <div
-                                        class="w-full md:w-[49%] relative flex items-center justify-center group cursor-pointer">
-                                        <video class="w-full rounded-lg shadow-md mb-4 md:mb-0"
-                                            poster="assets/vde-poster1.webp" controls
-                                            onclick="this.paused ? this.play() : this.pause()">
-                                            <source src="your-video-file.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                        <div
-                                            class="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-90">
-                                            <img src="assets/video-circle.png" alt="Play video"
-                                                class="w-20 h-20 md:w-24 md:h-24 cursor-pointer"
-                                                onclick="this.previousElementSibling.play(); this.style.display='none'">
-                                        </div>
-                                    </div>
-                                    <div class="w-full md:w-[49%]">
-                                        <h2
-                                            class="font-[Amaranth] text-[#000] text-[30px] text-left leading-tight md:mb-4 mb-2">
-                                            Reyansh Devnanai Parents</h2>
-                                        <p class="font-[Poppins] md:text-[18px] text-[16px] mb-4">CBSE XII - 2025</p>
-                                        <p class="font-[Poppins] md:text-[16px] text-[15px]">
-                                            Explore the world of robotics at Narayana Schools where technology and
-                                            innovation meet comprehensive education. Our dynamic robotics curriculum
-                                            empowers students with practical knowledge in the fields of STEM, fostering
-                                            critical thinking and problem-solving skills.
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="flex flex-wrap justify-between">
-                                    <div
-                                        class="w-full md:w-[49%] relative flex items-center justify-center group cursor-pointer">
-                                        <video class="w-full rounded-lg shadow-md" poster="assets/vde-poster1.webp"
-                                            controls onclick="this.paused ? this.play() : this.pause()">
-                                            <source src="your-video-file.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                        <div
-                                            class="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-90">
-                                            <img src="assets/video-circle.png" alt="Play video"
-                                                class="w-20 h-20 md:w-24 md:h-24 cursor-pointer"
-                                                onclick="this.previousElementSibling.play(); this.style.display='none'">
-                                        </div>
-                                    </div>
-                                    <div class="w-full md:w-[49%]">
-                                        <h2
-                                            class="font-[Amaranth] text-[#000] text-[30px] text-left leading-tight mb-4">
-                                            Reyansh Devnanai Parents</h2>
-                                        <p class="font-[Poppins] md:text-[18px] text-[16px] mb-4">CBSE XII - 2025</p>
-                                        <p class="font-[Poppins] md:text-[16px] text-[15px]">
-                                            Explore the world of robotics at Narayana Schools where technology and
-                                            innovation meet comprehensive education. Our dynamic robotics curriculum
-                                            empowers students with practical knowledge in the fields of STEM, fostering
-                                            critical thinking and problem-solving skills.
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="splide__slide">
-                                <div class="flex flex-wrap justify-between">
-                                    <div
-                                        class="w-full md:w-[49%] relative flex items-center justify-center group cursor-pointer">
-                                        <video class="w-full rounded-lg shadow-md" poster="assets/vde-poster1.webp"
-                                            controls onclick="this.paused ? this.play() : this.pause()">
-                                            <source src="your-video-file.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
-                                        <div
-                                            class="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-90">
-                                            <img src="assets/video-circle.png" alt="Play video"
-                                                class="w-20 h-20 md:w-24 md:h-24 cursor-pointer"
-                                                onclick="this.previousElementSibling.play(); this.style.display='none'">
-                                        </div>
-                                    </div>
-                                    <div class="w-full md:w-[49%]">
-                                        <h2
-                                            class="font-[Amaranth] text-[#000] text-[30px] text-left leading-tight mb-4">
-                                            Reyansh Devnanai Parents</h2>
-                                        <p class="font-[Poppins] md:text-[18px] text-[16px] mb-4">CBSE XII - 2025</p>
-                                        <p class="font-[Poppins] md:text-[16px] text-[15px]">
-                                            Explore the world of robotics at Narayana Schools where technology and
-                                            innovation meet comprehensive education. Our dynamic robotics curriculum
-                                            empowers students with practical knowledge in the fields of STEM, fostering
-                                            critical thinking and problem-solving skills.
-                                        </p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="bg-white pb-8 pt-6 mt-6 md:mt-0">
-            <div class="container px-4 mx-auto" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-duration="2000" data-aos-delay="2000">
-                <h2 class="font-[Amaranth] text-[#0776C1] text-center text-2xl md:text-[30px] mb-6">Frequently Asked
-                    Questions</h2>
-                <div class="flex flex-wrap justify-center items-center">
-                    <div class="md:w-[75%] w-full mx-auto">
-                        <div class="flex flex-wrap jusitfy-center gap-[2%]">
-                            <!-- Accordion Item -->
-                            <div class="w-full bg-[#0776C1] my-2 rounded">
-                                <button onclick="faqAccordion(1)"
-                                    class="w-full flex justify-between items-center py-3 px-5">
-                                    <h2 class="text-[15px] md:text-[18px] text-white font-[Poppins] text-left">
-                                        Q1. What is Narayana e-Kidz, and how is it unique compared to normal playschools?
-                                    </h2>
-                                    <span id="faqIcon-1">
-                                        <!-- Initially Plus icon -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-4 h-4">
-                                            <path d="M8 1v14M1 8h14" stroke="white" stroke-width="2"
-                                                stroke-linecap="round" />
-                                        </svg>
-                                    </span>
-                                </button>
-                                <div id="faqContent-1"
-                                    class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                                    <div class="py-5 text-sm text-black font-[Poppins] bg-[#F5F5F5] px-5">
-                                        <p class="text-[15px]">
-                                            Narayana e-Kidz is more than a playschool. It's the first stepping stone to a brighter, bolder future for your child. With warm, nurturing settings and activity-based learning, we fuel curiosity, creativity, and compassion in every child.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Accordion Item 2 -->
-                            <div class="w-full bg-[#0776C1] my-2 rounded">
-                                <button onclick="faqAccordion(2)"
-                                    class="w-full flex justify-between items-center py-3 px-5">
-                                    <h2 class="text-[15px] md:text-[18px] text-white font-[Poppins] text-left">
-                                        Q2. How old must a child be to be eligible to join Narayana e-Kidz?
-                                    </h2>
-                                    <span id="faqIcon-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-4 h-4">
-                                            <path d="M8 1v14M1 8h14" stroke="white" stroke-width="2"
-                                                stroke-linecap="round" />
-                                        </svg>
-                                    </span>
-                                </button>
-                                <div id="faqContent-2"
-                                    class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                                    <div class="py-5 text-sm text-black font-[Poppins] bg-[#F5F5F5] px-5">
-                                        <p class="text-[15px]">
-                                            Kids as young as three years old can join us! We want to make sure every child feels safe and loved, and we recognise how emotionally taxing this first step is for parents. The child will be excited to come to school.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Accordion Item 3 -->
-                            <div class="w-full bg-[#0776C1] my-2 rounded">
-                                <button onclick="faqAccordion(3)"
-                                    class="w-full flex justify-between items-center py-3 px-5">
-                                    <h2 class="text-[15px] md:text-[18px] text-white font-[Poppins] text-left">
-                                        Q3. How does Narayana e-Kidz nurture a child's emotional development?
-                                    </h2>
-                                    <span id="faqIcon-3">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-4 h-4">
-                                            <path d="M8 1v14M1 8h14" stroke="white" stroke-width="2"
-                                                stroke-linecap="round" />
-                                        </svg>
-                                    </span>
-                                </button>
-                                <div id="faqContent-3"
-                                    class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                                    <div class="py-5 text-sm text-black font-[Poppins] bg-[#F5F5F5] px-5">
-                                        <p class="text-[15px]">
-                                            We don't think learning is all about books. It's about feelings, too. Our teachers carefully nurture children with love, patience, and care, teaching them to be confident, communicate effectively, and have solid emotional connections.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Accordion Item 4 -->
-                            <div class="w-full bg-[#0776C1] my-2 rounded">
-                                <button onclick="faqAccordion(4)"
-                                    class="w-full flex justify-between items-center py-3 px-5">
-                                    <h2 class="text-[15px] md:text-[18px] text-white font-[Poppins] text-left">
-                                        Q4. Will my child be emotionally and academically prepared for formal education after e-Kidz?
-                                    </h2>
-                                    <span id="faqIcon-4">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-4 h-4">
-                                            <path d="M8 1v14M1 8h14" stroke="white" stroke-width="2"
-                                                stroke-linecap="round" />
-                                        </svg>
-                                    </span>
-                                </button>
-                                <div id="faqContent-4"
-                                    class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                                    <div class="py-5 text-sm text-black font-[Poppins] bg-[#F5F5F5] px-5">
-                                        <p class="text-[15px]">
-                                            Absolutely! Our specially created curriculum is designed to provide your child with a seamless education transition to primary school, academically and emotionally. We thoughtfully sow the proceeds of lifelong learning to help them bloom into confident people.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <footer class="bg-white py-4 pb-[5rem] md:pb-4 lg:pb-4">
-            <div class="container mx-auto px-4">
-                <hr class="w-full bg-black h-[2px] mb-4">
-                <div class="flex flex-wrap justify-center items-center gap-y-2">
-                    <p class="text-black font-normal text-sm font-[Poppins] text-center">
-                        Copyright © narayanaschools.in <span id="copyrightYear"></span>
-                    </p>
-                </div>
-            </div>
-        </footer>
-
-        <section class="fixed right-0 top-[50%] hidden lg:block">
-            <div>
-                <a href="tel:18001023344"
-                    class="bg-[#f5821f] hover:bg-[#e4710f] hover:scale-105 transition-all duration-300 rounded-l-lg inline-block text-center p-4 shadow-lg">
-                    <svg class="w-6 h-6 text-[#FFF] mx-auto" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                        width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                        <path
-                            d="M6.97825 3.99999c-.3729 0-.74128.08169-1.07926.23933-.32394.1511-.61243.36846-.84696.63787-1.81892 1.82189-2.35302 3.87423-1.89899 5.93671.43916 1.9949 1.77747 3.8929 3.45642 5.572 1.67897 1.6791 3.57614 3.0176 5.57034 3.4591 2.0612.4563 4.1141-.0726 5.9396-1.8853.2705-.2348.4888-.524.6405-.8489.1581-.3387.2401-.7081.2401-1.0819 0-.3739-.082-.7432-.2401-1.0819-.1516-.3247-.3696-.6137-.6398-.8483l-1.2098-1.2106c-.5043-.5041-1.1879-.7872-1.9007-.7872-.7128 0-1.3968.2835-1.9011.7876l-.6178.6181c-.1512.1513-.3563.2363-.5701.2363-.2138 0-.4189-.085-.5701-.2363l-1.85336-1.8545c-.15117-.1513-.23609-.3565-.23609-.5704 0-.214.08493-.4192.23613-.5705l.61812-.61851c.5037-.50461.7867-1.18868.7867-1.90191s-.2833-1.39767-.7871-1.90228L8.90499 4.8778c-.23462-.26969-.5233-.48727-.84749-.63848-.33798-.15764-.70636-.23933-1.07925-.23933Z">
-                        </path>
-                        <path fill-rule="evenodd"
-                            d="M14.9925 3.99996c0-.55228.4477-.99999 1-.99999l3.03.00002c.5523 0 1 .44772 1 1v2.98135c0 .55228-.4478 1-1 1-.5523 0-1-.44772-1-1v-.58113l-3.3184 3.29112c-.3921.38887-1.0253.38627-1.4142-.00583-.3889-.39213-.3863-1.02529.0059-1.4142l3.2983-3.27133h-.6016c-.5523 0-1-.44772-1-1.00001Z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                </a>
-            </div>
-            <div>
-                <a href="https://api.whatsapp.com/send?phone=919147415932"
-                    class="bg-[#f5821f] hover:bg-[#e4710f] hover:scale-105 transition-all duration-300 rounded-l-lg inline-block text-center p-4 shadow-lg mt-1">
-                    <svg class="w-6 h-6 text-[#FFF]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                        height="24" fill="none" viewBox="0 0 24 24">
-                        <path fill="currentColor" fill-rule="evenodd"
-                            d="M12 4a8 8 0 0 0-6.895 12.06l.569.718-.697 2.359 2.32-.648.379.243A8 8 0 1 0 12 4ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.96 9.96 0 0 1-5.016-1.347l-4.948 1.382 1.426-4.829-.006-.007-.033-.055A9.958 9.958 0 0 1 2 12Z"
-                            clip-rule="evenodd"></path>
-                        <path fill="currentColor"
-                            d="M16.735 13.492c-.038-.018-1.497-.736-1.756-.83a1.008 1.008 0 0 0-.34-.075c-.196 0-.362.098-.49.291-.146.217-.587.732-.723.886-.018.02-.042.045-.057.045-.013 0-.239-.093-.307-.123-1.564-.68-2.751-2.313-2.914-2.589-.023-.04-.024-.057-.024-.057.005-.021.058-.074.085-.101.08-.079.166-.182.249-.283l.117-.14c.121-.14.175-.25.237-.375l.033-.066a.68.68 0 0 0-.02-.64c-.034-.069-.65-1.555-.715-1.711-.158-.377-.366-.552-.655-.552-.027 0 0 0-.112.005-.137.005-.883.104-1.213.311-.35.22-.94.924-.94 2.16 0 1.112.705 2.162 1.008 2.561l.041.06c1.161 1.695 2.608 2.951 4.074 3.537 1.412.564 2.081.63 2.461.63.16 0 .288-.013.4-.024l.072-.007c.488-.043 1.56-.599 1.804-1.276.192-.534.243-1.117.115-1.329-.088-.144-.239-.216-.43-.308Z">
-                        </path>
-                    </svg>
-                </a>
-            </div>
-        </section>
-
-
-        <section class="block lg:hidden">
-            <div class="fixed bottom-0 left-0 z-50 w-full h-16 bg-[#0877be] border-t border-[#8b8b8b]">
-                <div class="grid h-full max-w-lg grid-cols-3 mx-auto font-medium">
-                    <a href="tel:18001023344"
-                        class="inline-flex flex-col items-center justify-center px-5 border-gray-200 border-x hover:bg-[#00406a] group  ">
-                        <svg class="w-6 h-6 text-[#FFFFFF]  " aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M6.97825 3.99999c-.3729 0-.74128.08169-1.07926.23933-.32394.1511-.61243.36846-.84696.63787-1.81892 1.82189-2.35302 3.87423-1.89899 5.93671.43916 1.9949 1.77747 3.8929 3.45642 5.572 1.67897 1.6791 3.57614 3.0176 5.57034 3.4591 2.0612.4563 4.1141-.0726 5.9396-1.8853.2705-.2348.4888-.524.6405-.8489.1581-.3387.2401-.7081.2401-1.0819 0-.3739-.082-.7432-.2401-1.0819-.1516-.3247-.3696-.6137-.6398-.8483l-1.2098-1.2106c-.5043-.5041-1.1879-.7872-1.9007-.7872-.7128 0-1.3968.2835-1.9011.7876l-.6178.6181c-.1512.1513-.3563.2363-.5701.2363-.2138 0-.4189-.085-.5701-.2363l-1.85336-1.8545c-.15117-.1513-.23609-.3565-.23609-.5704 0-.214.08493-.4192.23613-.5705l.61812-.61851c.5037-.50461.7867-1.18868.7867-1.90191s-.2833-1.39767-.7871-1.90228L8.90499 4.8778c-.23462-.26969-.5233-.48727-.84749-.63848-.33798-.15764-.70636-.23933-1.07925-.23933Z" />
-                            <path fill-rule="evenodd"
-                                d="M14.9925 3.99996c0-.55228.4477-.99999 1-.99999l3.03.00002c.5523 0 1 .44772 1 1v2.98135c0 .55228-.4478 1-1 1-.5523 0-1-.44772-1-1v-.58113l-3.3184 3.29112c-.3921.38887-1.0253.38627-1.4142-.00583-.3889-.39213-.3863-1.02529.0059-1.4142l3.2983-3.27133h-.6016c-.5523 0-1-.44772-1-1.00001Z"
-                                clip-rule="evenodd" />
-                        </svg>
-                        <span class="text-sm font-[Amaranth] text-[#FFFFFF] font-normal group-hover:text-slate-300">Call</span>
-                    </a>
-                    <a href="https://api.whatsapp.com/send?phone=919147415932"
-                        class="inline-flex flex-col items-center justify-center px-5 border-e border-gray-200 hover:bg-[#00406a] group  ">
-                        <svg class="w-6 h-6 text-[#FFFFFF]  " aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path fill="currentColor" fill-rule="evenodd"
-                                d="M12 4a8 8 0 0 0-6.895 12.06l.569.718-.697 2.359 2.32-.648.379.243A8 8 0 1 0 12 4ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.96 9.96 0 0 1-5.016-1.347l-4.948 1.382 1.426-4.829-.006-.007-.033-.055A9.958 9.958 0 0 1 2 12Z"
-                                clip-rule="evenodd" />
-                            <path fill="currentColor"
-                                d="M16.735 13.492c-.038-.018-1.497-.736-1.756-.83a1.008 1.008 0 0 0-.34-.075c-.196 0-.362.098-.49.291-.146.217-.587.732-.723.886-.018.02-.042.045-.057.045-.013 0-.239-.093-.307-.123-1.564-.68-2.751-2.313-2.914-2.589-.023-.04-.024-.057-.024-.057.005-.021.058-.074.085-.101.08-.079.166-.182.249-.283l.117-.14c.121-.14.175-.25.237-.375l.033-.066a.68.68 0 0 0-.02-.64c-.034-.069-.65-1.555-.715-1.711-.158-.377-.366-.552-.655-.552-.027 0 0 0-.112.005-.137.005-.883.104-1.213.311-.35.22-.94.924-.94 2.16 0 1.112.705 2.162 1.008 2.561l.041.06c1.161 1.695 2.608 2.951 4.074 3.537 1.412.564 2.081.63 2.461.63.16 0 .288-.013.4-.024l.072-.007c.488-.043 1.56-.599 1.804-1.276.192-.534.243-1.117.115-1.329-.088-.144-.239-.216-.43-.308Z" />
-                        </svg>
-                        <span class="text-sm text-[#FFFFFF] font-[Amaranth] font-normal group-hover:text-slate-300">Whatsapp</span>
-                    </a>
+    <section id="pop-banner"
+        class="fixed top-0 left-0 bg-gradient-to-r from-[#098FEA] to-[#066EB5] py-[15px] w-full z-50 transition-all duration-500">
+        <div class="container mx-auto max-w-screen-xl px-4 relative">
+            <div class="flex flex-wrap items-center justify-center">
+                <div class="flex items-center flex-col md:flex-row gap-y-2 gap-x-6">
+                    <p class="text-white font-semibold font-[Poppins] text-[15px]">Admission Open to a World of
+                        Wonder!</p>
                     <button type="button" data-modal-target="crud-modal" data-modal-toggle="crud-modal"
-                        class="inline-flex flex-col items-center justify-center border-gray-200 border-r px-5 hover:bg-[#00406a] group">
-                        <svg class="w-6 h-6 text-[#FFFFFF]  " aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                            width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd"
-                                d="M12 2a1 1 0 0 1 .932.638l7 18a1 1 0 0 1-1.326 1.281L13 19.517V13a1 1 0 1 0-2 0v6.517l-5.606 2.402a1 1 0 0 1-1.326-1.281l7-18A1 1 0 0 1 12 2Z"
-                                clip-rule="evenodd" />
-                        </svg>
-                        <span class="text-sm text-[#FFFFFF] font-[Amaranth] font-normal group-hover:text-slate-300">Apply Now</span>
+                        class="bg-gradient-to-r from-[#FF9F50] to-[#ED7A1C] hover:from-[#ed7a1c] hover:to-[#FF9F50]  hover:scale-105 transition-all duration-300 ease-in-out px-8 py-1 text-white rounded-[20px] border border-white font-[Poppins] shadow-md">
+                        Enrol Now!
                     </button>
                 </div>
             </div>
-        </section>
+            <img src="assets/close-circle.webp" alt="Close" id="closeBanner"
+                class="absolute right-3 lg:top-1 md:top-1 top-5 w-6 h-6 cursor-pointer" />
+        </div>
+    </section>
+
+    <header id="mainHeader" class="relative transition-all duration-500 lg:mt-[70px] md:mt-[65px] mt-[95px]">
+        <div class="container bg-white mx-auto p-4">
+            <div class="flex justify-center items-center">
+                <img src="assets/logo.png" alt="logo" class="w-[350px] h-full">
+            </div>
+        </div>
+    </header>
+
+    <section class="relative w-full lg:h-[751px] h-[400px] md:h-[600px]">
+        <img src="assets/banner.webp" alt="banner" class="absolute inset-0 w-full h-full object-cover hidden md:block"
+            width="1920" height="751" loading="lazy" decoding="async" fetchpriority="low">
+        <img src="assets/mob-banner.webp" alt="banner"
+            class="absolute inset-0 w-full h-full object-cover block md:hidden" width="430" height="500"
+            decoding="async" fetchpriority="high" />
+        <div class="lg:absolute lg:bottom-0 lg:right-20 md:absolute md:bottom-0 md:right-10 bg-white p-6 lg:w-[550px] md:w-[450px] md:p-4 hidden md:block lg:block"
+            data-aos="fade-up" data-aos-delay="100">
+            <form action=""
+                class="max-w-lg mx-auto p-4 mt-[400px] md:mt-[0px] lg:mt-0 border border-2 border-black rounded-lg md:border-none lg:border-none">
+                <h2 class="text-2xl font-bold font-[Oswald] mb-8 text-center text-[#0776C1]">
+                    Admissions Open 2025-26
+                </h2>
+                <select title="Please select a class"
+                    class="border border-0 border-b-[1.5px] border-[#313030] p-2 w-full mb-6 font-[Poppins] focus:outline-none focus:ring-0"
+                    required>
+                    <option value="">Select Class</option>
+                    <option value="nursery">Nursery</option>
+                    <option value="kg">KG</option>
+                    <option value="class-1">Class 1</option>
+                    <option value="class-2">Class 2</option>
+                </select>
+                <input type="text" name="name" placeholder="Student Name"
+                    class="border border-0 border-b-[1.5px] border-[#313030] p-2 w-full mb-6 font-[Poppins] focus:outline-none focus:ring-0"
+                    required title="Please enter your name" />
+
+                <input type="email" name="email" placeholder="Parent Email ID" title="Please enter a valid email ID"
+                    class="border border-0 border-b-[1.5px] border-[#313030] p-2 w-full mb-6 font-[Poppins] focus:outline-none focus:ring-0"
+                    required />
+                <input type="tel" name="mobile" placeholder="Mobile Number"
+                    class="border-0 border-b-[1.5px] border-[#313030] p-2 w-full mb-6 font-[Poppins] focus:outline-none focus:ring-0 focus:border-[#0776C1]"
+                    required pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" />
+                <select title="Please select a board"
+                    class="border border-0 border-b-[1.5px] border-[#313030] p-2 w-full mb-10 font-[Poppins] focus:outline-none focus:ring-0"
+                    required>
+                    <option value="">Select Board</option>
+                    <option value="cbse">CBSE</option>
+                    <option value="icse">ICSE</option>
+                    <option value="state-board">State Board</option>
+                    <option value="ib">IB</option>
+                </select>
+                <div class="flex justify-center">
+                    <button type="submit"
+                        class="relative text-white lg:px-52 px-28 py-3 bg-gradient-to-r from-[#FF9F50] to-[#ED7A1C] rounded-lg transition font-[Poppins] hover:opacity-90 
+                               after:content-[''] after:absolute after:ml-[10px] after:w-5 after:h-5 after:bg-[url('./assets/exit.png')] after:bg-contain after:bg-no-repeat">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="block md:hidden lg:hidden" data-aos="fade-up" data-aos-delay="100">
+        <div class="bg-white p-6 lg:w-[550px] md:w-[450px] md:p-4">
+            <form action=""
+                class="max-w-lg mx-auto p-4 border border-2 border-black rounded-lg md:border-none lg:border-none">
+                <h2 class="text-2xl font-bold font-[Oswald] mb-8 text-center text-[#0776C1]">
+                    Admissions Open 2025-26
+                </h2>
+                <select title="Please select a class"
+                    class="border border-0 border-b-[1.5px] border-[#313030] p-2 w-full mb-6 font-[Poppins] focus:outline-none focus:ring-0"
+                    required>
+                    <option value="">Select Class</option>
+                    <option value="nursery">Nursery</option>
+                    <option value="kg">KG</option>
+                    <option value="class-1">Class 1</option>
+                    <option value="class-2">Class 2</option>
+                </select>
+                <input type="text" name="name" placeholder="Student Name"
+                    class="border border-0 border-b-[1.5px] border-[#313030] p-2 w-full mb-6 font-[Poppins] focus:outline-none focus:ring-0"
+                    required title="Please enter your name" />
+                <input type="email" name="email" placeholder="Parent Email ID" title="Please enter a valid email ID"
+                    class="border border-0 border-b-[1.5px] border-[#313030] p-2 w-full mb-6 font-[Poppins] focus:outline-none focus:ring-0"
+                    required />
+                <input type="tel" name="mobile" placeholder="Mobile Number"
+                    class="border-0 border-b-[1.5px] border-[#313030] p-2 w-full mb-6 font-[Poppins] focus:outline-none focus:ring-0 focus:border-[#0776C1]"
+                    required pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" />
+                <select title="Please select a board"
+                    class="border border-0 border-b-[1.5px] border-[#313030] p-2 w-full mb-10 font-[Poppins] focus:outline-none focus:ring-0"
+                    required>
+                    <option value="">Select Board</option>
+                    <option value="cbse">CBSE</option>
+                    <option value="icse">ICSE</option>
+                    <option value="state-board">State Board</option>
+                    <option value="ib">IB</option>
+                </select>
+                <div class="flex justify-center">
+                    <button type="submit"
+                        class="relative text-white lg:px-52 px-28 py-3 bg-gradient-to-r from-[#FF9F50] to-[#ED7A1C] rounded-lg transition font-[Poppins] hover:opacity-90 
+                               after:content-[''] after:absolute after:ml-[10px] after:w-5 after:h-5 after:bg-[url('./assets/exit.png')] after:bg-contain after:bg-no-repeat">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    <section class="bg-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center justify-center text-left md:text-center">
+                <h2 class="font-[Amaranth] text-[#0776C1] text-2xl md:text-[30px] md:text-center text-left mb-6 leading-tight"
+                    data-aos="fade-up">Why Narayana is Different from Others?</h2>
+                <p class="font-[Poppins] text-[16px]" data-aos="fade-up" data-aos-delay="100">
+                    At Narayana, we take pride in our 46+ years legacy of excellence. Our approach, refined over the
+                    last 4+ decades, has led us to a process driven system which is in line with today's needs &
+                    requirements to ensure Overall Development of students. Through this system, we foster an
+                    environment where excellence thrives. At Narayana, it is your dreams that fuel our passion and
+                    perseverance because at Narayana, Your Dreams Are Our Dreams.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+                data-duration="4000">
+                <h2
+                    class="star-heading w-[300px] relative font-[Amaranth] text-[#0776C1] text-2xl md:text-[30px] text-center mb-6 leading-tight before:content-[''] before:absolute before:w-16 before:h-16 before:-top-10 md:before:-left-6 before:-left-4 before:bg-[url('./assets/star.png')] before:bg-contain before:bg-no-repeat">
+                    The Narayana Edge
+                </h2>
+            </div>
+            <div class="flex flex-wrap items-center md:justify-between justify-center gap-4 h-auto">
+                <div class="w-[47%] md:w-[30%] lg:w-[15%] h-auto bg-[#0776C1] px-4 py-8 flex justify-center items-center order-1 lg:order-1"
+                    data-aos="fade-right" data-aos-delay="50">
+                    <p class="text-[#FFF] text-[18px] leading-tight text-center">Integrated<br />Curriculum</p>
+                </div>
+                <div class="w-[47%] md:w-[30%] lg:w-[15%] h-auto bg-[#F98B2F] px-4 py-8 flex justify-center items-center order-2 lg:order-2"
+                    data-aos="fade-right" data-aos-delay="100">
+                    <p class="text-[#FFF] text-[18px] leading-tight text-center">Appropriate<br />Educational
+                    </p>
+                </div>
+                <div class="w-[47%] md:w-[30%] lg:w-[15%] h-auto bg-[#0776C1] px-4 py-8 flex justify-center items-center order-4 lg:order-3"
+                    data-aos="fade-right" data-aos-delay="150">
+                    <p class="text-[#FFF] text-[18px] leading-tight text-center">Pioneering<br />R&D Team</p>
+                </div>
+                <div class="w-[47%] md:w-[30%] lg:w-[15%] h-auto bg-[#F98B2F] px-4 py-8 flex justify-center items-center order-3 lg:order-4"
+                    data-aos="fade-right" data-aos-delay="200">
+                    <p class="text-[#FFF] text-[18px] leading-tight text-center">Well-planned<br />Microschedules
+                    </p>
+                </div>
+                <div class="w-[47%] md:w-[30%] lg:w-[15%] h-auto bg-[#0776C1] px-4 py-8 flex justify-center items-center order-3 lg:order-5"
+                    data-aos="fade-right" data-aos-delay="250">
+                    <p class="text-[#FFF] text-[18px] leading-tight text-center">Adoption<br />Calling</p>
+                </div>
+                <div class="w-[47%] md:w-[30%] lg:w-[15%] h-auto bg-[#F98B2F] px-4 py-8 flex justify-center items-center order-5 lg:order-6"
+                    data-aos="fade-right" data-aos-delay="300">
+                    <p class="text-[#FFF] text-[18px] leading-tight text-center">Tech-enabled<br />Framework</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <section class="bg-white pb-6 pt-0 md:py-6 relative">
+        <img src="assets/baby.webp" alt="" class="absolute top-0 left-0 w-auto baby mb-8" loading="lazy"
+            decoding="async" fetchpriority="low" data-aos="fade-right" data-aos-duration="600" data-aos-delay="100">
+        <div class="container mx-auto flex flex-col md:flex-row px-4 gap-y-6">
+            <div class="relative w-full md:w-1/2 h-[300px] md:h-[730px] mb-[30px] md:mb-0">
+                <img src="assets/star2.png" alt="" loading="lazy" decoding="async" fetchpriority="low"
+                    class="float-up-down absolute top-0 right-0 md:right-[185px] z-20 w-[100px] h-[100px] md:w-auto md:h-auto"
+                    data-aos="zoom-in" data-aos-duration="500" data-aos-delay="300">
+                <img src="assets/cloud.png" alt="" loading="lazy" decoding="async" fetchpriority="low"
+                    class="move-left-right absolute -bottom-10 md:bottom-0 md:right-20 right-0 z-40 w-[100px] h-auto md:w-auto"
+                    data-aos="fade-left" data-aos-duration="500" data-aos-delay="500">
+            </div>
+            <div class="w-full md:w-1/2 mt-10 md:mt-4 pt-[35px] md:pt-0">
+                <div class="md:mb-8 mb-4">
+                    <h2 class="font-[Amaranth] text-white text-2xl md:text-[30px] text-center leading-tight bg-[#0776C1] px-6 py-3 w-full max-w-md mb-6"
+                        data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
+                        Age: 3 to 5 | Nursery - U.K.G
+                    </h2>
+                    <p class="font-[Poppins] max-w-[700px] md:text-[16px] text-[15px]" data-aos="fade-up"
+                        data-aos-duration="500" data-aos-delay="300">
+                        Designed for children from ages 3 to 5, our age appropriate curriculum offers personalised
+                        care, ensuring that your child receives the best early education in a secure, hygienic
+                        space.
+                    </p>
+                </div>
+                <div class="flex flex-col md:flex-row gap-4 md:mb-8 mb-6">
+                    <ul class="font-[Poppins] text-[16px] space-y-3">
+                        <li class="relative pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-5 before:h-5 before:bg-[url('assets/verify.png')] before:bg-contain before:bg-no-repeat"
+                            data-aos="fade-up" data-aos-delay="400">
+                            Age appropriate curriculum
+                        </li>
+                        <li class="relative pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-5 before:h-5 before:bg-[url('assets/verify.png')] before:bg-contain before:bg-no-repeat"
+                            data-aos="fade-up" data-aos-delay="450">
+                            Personal attention
+                        </li>
+                        <li class="relative pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-5 before:h-5 before:bg-[url('assets/verify.png')] before:bg-contain before:bg-no-repeat"
+                            data-aos="fade-up" data-aos-delay="500">
+                            Safety
+                        </li>
+                    </ul>
+                    <ul class="font-[Poppins] text-[16px] space-y-3">
+                        <li class="relative pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-5 before:h-5 before:bg-[url('assets/verify.png')] before:bg-contain before:bg-no-repeat"
+                            data-aos="fade-up" data-aos-delay="550">
+                            Infrastructure
+                        </li>
+                        <li class="relative pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-5 before:h-5 before:bg-[url('assets/verify.png')] before:bg-contain before:bg-no-repeat"
+                            data-aos="fade-up" data-aos-delay="600">
+                            CCTV camera
+                        </li>
+                        <li class="relative pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-5 before:h-5 before:bg-[url('assets/verify.png')] before:bg-contain before:bg-no-repeat"
+                            data-aos="fade-up" data-aos-delay="650">
+                            Transportation
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="login-heading relative font-[Amaranth] text-[#0776C1] md:text-[20px] text-[19px] mb-4 leading-tight pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-5 before:h-5 before:bg-[url('assets/login.png')] before:bg-contain before:bg-no-repeat"
+                        data-aos="fade-right" data-aos-duration="500" data-aos-delay="700">
+                        Why Pre-primary Education Matters?
+                    </h3>
+                    <p class="font-[Poppins] max-w-[700px] text-[16px] mb-6" data-aos="fade-up" data-aos-duration="500"
+                        data-aos-delay="750">
+                        The early years from birth to age 5 are critical in shaping a child's future. Pre-primary
+                        education is essential for brain development, fostering essential skills that support
+                        well-rounded growth.
+                    </p>
+                    <h3 class="login-heading relative font-[Amaranth] text-[#0776C1] md:text-[20px] text-[19px] mb-4 leading-tight pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-5 before:h-5 before:bg-[url('assets/login.png')] before:bg-contain before:bg-no-repeat"
+                        data-aos="fade-right" data-aos-duration="500" data-aos-delay="800">
+                        Age Appropriate Curriculum
+                    </h3>
+                    <p class="font-[Poppins] max-w-[700px] text-[16px]" data-aos="fade-up" data-aos-duration="500"
+                        data-aos-delay="850">
+                        Supported by our dedicated R&D team, which thoroughly understands the unique developmental
+                        needs of children in this age group, we create tailored curricula and activities that foster
+                        the growth of essential skills.
+                    </p>
+                </div>
+                <div class="md:mt-10 mt-6" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="900">
+                    <button type="button" data-modal-target="crud-modal" data-modal-toggle="crud-modal"
+                        class="bg-gradient-to-r from-[#FF9F50] to-[#ED7A1C] hover:from-[#ED7A1C] hover:to-[#FF9F50] hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out px-8 py-2 text-white rounded-[20px] border border-white font-[Poppins]">
+                        Enrol Now!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white pb-6 pt-0 md:py-6">
+        <div class="container mx-auto px-4">
+            <h2 class="font-[Amaranth] text-[#0776C1] text-2xl md:text-[30px] md:text-center text-left mb-8 md:mb-12 leading-tight"
+                data-aos="fade-up" data-aos-duration="600">
+                Our Classes for Young Learners
+            </h2>
+            <div class="flex flex-wrap justify-center gap-6">
+                <div class="relative w-full md:w-[48%] lg:w-[30%] overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
+                    <img src="assets/bud.webp" alt="Nursery Class"
+                        class="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
+                        loading="lazy" decoding="async" fetchpriority="low">
+                    <div class="absolute bottom-0 left-0 right-0 bg-[#F58220] transition-all duration-300 ease-in-out"
+                        id="classOverlay-1">
+                        <div class="p-4 flex justify-between items-center cursor-pointer hover:bg-white/10 transition duration-300 rounded-md"
+                            onclick="classCardToggle(1)">
+                            <h3 class="text-white font-[Poppins] font-semibold md:text-[16px] text-[15px]">
+                                BUD (Nursery: 3+ Years)
+                            </h3>
+                            <span id="classIcon-1" class="transform transition-transform duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-5 h-5">
+                                    <path d="M8 1v14M1 8h14" stroke="white" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </span>
+                        </div>
+                        <div id="classContent-1"
+                            class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                            <hr class="border-white/20 my-1">
+                            <div class="px-4 pb-4">
+                                <p class="text-white font-[Poppins] text-sm md:text-base leading-relaxed">
+                                    A fun-filled learning environment fostering creativity through play, stories,
+                                    and dance, building a sound basis in language and cognitive skills.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative w-full md:w-[48%] lg:w-[30%] overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
+                    <img src="assets/bloom.webp" alt="LKG Class"
+                        class="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
+                        loading="lazy" decoding="async" fetchpriority="low">
+                    <div class="absolute bottom-0 left-0 right-0 bg-[#F58220] transition-all duration-300 ease-in-out"
+                        id="classOverlay-2">
+                        <div class="p-4 flex justify-between items-center cursor-pointer hover:bg-white/10 transition duration-300 rounded-md"
+                            onclick="classCardToggle(2)">
+                            <h3 class="text-white font-[Poppins] font-semibold text-lg">
+                                BLOOM (LKG: 4+ Years)
+                            </h3>
+                            <span id="classIcon-2" class="transform transition-transform duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-5 h-5">
+                                    <path d="M8 1v14M1 8h14" stroke="white" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </span>
+                        </div>
+                        <div id="classContent-2"
+                            class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                            <hr class="border-white/20 my-1">
+                            <div class="px-4 pb-4">
+                                <p class="text-white font-[Poppins] text-sm md:text-base leading-relaxed">
+                                    A vibrant environment to build foundational literacy, numeracy & social skills
+                                    through structured learning.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative w-full md:w-[48%] lg:w-[30%] overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
+                    <img src="assets/blossom.webp" alt="UKG Class"
+                        class="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
+                        loading="lazy" decoding="async" fetchpriority="low">
+                    <div class="absolute bottom-0 left-0 right-0 bg-[#F58220] transition-all duration-300 ease-in-out"
+                        id="classOverlay-3">
+                        <div class="p-4 flex justify-between items-center cursor-pointer hover:bg-white/10 transition duration-300 rounded-md"
+                            onclick="classCardToggle(3)">
+                            <h3 class="text-white font-[Poppins] font-semibold text-lg">
+                                BLOSSOM (UKG: 5+ Years)
+                            </h3>
+                            <span id="classIcon-3" class="transform transition-transform duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-5 h-5">
+                                    <path d="M8 1v14M1 8h14" stroke="white" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </span>
+                        </div>
+                        <div id="classContent-3"
+                            class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                            <hr class="border-white/20 my-1">
+                            <div class="px-4 pb-4">
+                                <p class="text-white font-[Poppins] text-sm md:text-base leading-relaxed">
+                                    Preparing learners for primary education with focus on cognitive & emotional
+                                    readiness.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white pb-6 pt-0 md:py-6">
+        <div class="container mx-auto p-4 bg-[#0776C1]">
+            <div class="flex gap-4 items-center mb-6" data-aos="fade-right" data-aos-duration="800" data-aos-delay="100"
+                data-aos-anchor-placement="center-bottom">
+                <h2 class="font-[Amaranth] text-[#FFF] text-2xl md:text-[30px] text-center leading-tight">
+                    Our Fraternity
+                </h2>
+                <img src="assets/cloud.png" alt="" class="cloud-drift w-20 h-auto" loading="lazy">
+            </div>->
+            <p class="font-[Poppins] md:text-[16px] text-[15px] text-[#FFF] mb-6" data-aos="fade-up"
+                data-aos-duration="800" data-aos-delay="400" data-aos-anchor-placement="center-bottom">
+                Supported by our dedicated R&D team, which thoroughly understands the unique developmental needs of
+                children in this age group, we create tailored curricula and activities that foster the growth of
+                essential skills.
+            </p>
+            <div class="flex flex-wrap justify-between gap-4">
+                <div class="flex-1 md:flex-initial bg-[#3A8DD4] rounded-md px-6 py-4 w-[50%] md:w-[120px] text-center flex flex-wrap justify-center items-center gap-x-4"
+                    data-aos="zoom-in" data-aos-duration="700" data-aos-delay="600"
+                    data-aos-anchor-placement="center-bottom">
+                    <p class="text-white text-4xl font-normal font-[Agbalumo]">23</p>
+                    <p class="text-white text-xl font-[Poppins]">State</p>
+                </div>
+                <div class="flex-2 md:flex-0 bg-[#045FA3] rounded-md px-6 py-4 w-[50%] md:w-[160px] text-center flex flex-wrap justify-center items-center gap-x-4"
+                    data-aos="zoom-in" data-aos-duration="700" data-aos-delay="900"
+                    data-aos-anchor-placement="center-bottom">
+                    <p class="text-white text-4xl font-normal font-[Agbalumo]">250+</p>
+                    <p class="text-white text-xl font-[Poppins]">Cities</p>
+                </div>
+                <div class="flex-1 md:flex-0 bg-[#045FA3] rounded-md px-6 py-4 w-[50%] md:w-[300px] text-center flex flex-wrap justify-center items-center gap-x-4"
+                    data-aos="zoom-in" data-aos-duration="700" data-aos-delay="1200"
+                    data-aos-anchor-placement="center-bottom">
+                    <p class="text-white text-4xl font-normal font-[Agbalumo]">900+</p>
+                    <p class="text-white text-xl font-[Poppins]">Educational<br>Institutions</p>
+                </div>
+                <div class="flex-1 md:flex-0 bg-[#045FA3] rounded-md px-6 py-4 w-[50%] md:w-[350px] text-center flex flex-wrap justify-center items-center gap-x-4"
+                    data-aos="zoom-in" data-aos-duration="700" data-aos-delay="1500"
+                    data-aos-anchor-placement="center-bottom">
+                    <p class="text-white text-4xl font-normal font-[Agbalumo]">600000+</p>
+                    <p class="text-white text-xl font-[Poppins]">Learners<br>Annually</p>
+                </div>
+                <div class="flex-1 md:flex-0 bg-[#045FA3] rounded-md px-6 py-4 w-[50%] md:w-[200px] text-center flex flex-wrap justify-center items-center gap-x-4"
+                    data-aos="zoom-in" data-aos-duration="700" data-aos-delay="1800"
+                    data-aos-anchor-placement="center-bottom">
+                    <p class="text-white text-4xl font-normal font-[Agbalumo]">900+</p>
+                    <p class="text-white text-xl font-[Poppins]">Educational<br>Institutions</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
 
 
 
+    <section class="bg-white pb-6 pt-0 md:py-6">
+        <div class="container mx-auto px-4" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+            data-aos-duration="800">
+            <div class="flex justify-center items-center gap-x-6 mb-6" data-aos="fade-down" data-aos-duration="900"
+                data-aos-delay="100" data-aos-anchor-placement="center-bottom">
+                <img src="assets/star3.png" alt="" class="float-up-down md:w-[10%] lg:w-[7%] w-[20%]" loading="lazy"
+                    decoding="async" fetchpriority="low">
+                <h2 class="font-[Amaranth] text-[#0776C1] text-2xl md:text-[30px] text-center leading-tight">
+                    Our Gallery
+                </h2>
+                <img src="assets/rainbow.png" alt="" class="swing-rainbow md:w-[10%] lg:w-[7%] w-[20%]" loading="lazy"
+                    decoding="async" fetchpriority="low">
+            </div>
+            <div class="flex flex-wrap justify-between gap-2">
+                <div class="w-full md:w-[49%] flex gap-4">
+                    <div class="w-1/2 flex flex-col gap-4">
+                        <div class="relative overflow-hidden rounded-lg shadow-md" data-aos="zoom-in"
+                            data-aos-duration="700" data-aos-delay="150" data-aos-anchor-placement="bottom-bottom">
+                            <img src="assets/g5.webp" alt=""
+                                class="w-full md:h-[495px] h-[260px] object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+                                loading="lazy" decoding="async" fetchpriority="low" />
+                        </div>
+                    </div>
+                    <div class="w-1/2 flex flex-col gap-4">
+                        <div class="relative overflow-hidden rounded-lg shadow-md" data-aos="zoom-in"
+                            data-aos-duration="700" data-aos-delay="250" data-aos-anchor-placement="bottom-bottom">
+                            <img src="assets/g1.webp" alt=""
+                                class="w-full md:h-[220px] h-[110px] object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+                                loading="lazy" decoding="async" fetchpriority="low" />
+                        </div>
+                        <div class="relative overflow-hidden rounded-lg shadow-md" data-aos="zoom-in"
+                            data-aos-duration="700" data-aos-delay="350" data-aos-anchor-placement="bottom-bottom">
+                            <img src="assets/g4.webp" alt=""
+                                class="w-full md:h-[262px] h-[131px] object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+                                loading="lazy" decoding="async" fetchpriority="low" />
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-[49%] flex gap-4">
+                    <div class="w-1/2 flex flex-col gap-4 md:order-1 order-2">
+                        <div class="relative overflow-hidden rounded-lg shadow-md" data-aos="zoom-in"
+                            data-aos-duration="700" data-aos-delay="450" data-aos-anchor-placement="bottom-bottom">
+                            <img src="assets/g6.webp" alt=""
+                                class="w-full md:h-[495px] h-[260px] object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+                                loading="lazy" decoding="async" fetchpriority="low" />
+                        </div>
+                    </div>
+                    <div class="w-1/2 flex flex-col gap-4 md:order-2 order-1">
+                        <div class="relative overflow-hidden rounded-lg shadow-md" data-aos="zoom-in"
+                            data-aos-duration="700" data-aos-delay="550" data-aos-anchor-placement="bottom-bottom">
+                            <img src="assets/g2.webp" alt=""
+                                class="w-full md:h-[305px] h-[151px] object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+                                loading="lazy" decoding="async" fetchpriority="low" />
+                        </div>
+                        <div class="relative overflow-hidden rounded-lg shadow-md" data-aos="zoom-in"
+                            data-aos-duration="700" data-aos-delay="650" data-aos-anchor-placement="bottom-bottom">
+                            <img src="assets/g3.webp" alt=""
+                                class="w-full md:h-[177px] h-[90px] object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+                                loading="lazy" decoding="async" fetchpriority="low" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- Main modal -->
-        <div id="crud-modal" tabindex="-1" aria-hidden="true"
-            class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full bg-black bg-opacity-50">
-            <div class="relative p-4 w-full max-w-lg max-h-full">
-                <!-- Modal content -->
-                <div class="relative bg-white rounded-lg shadow-lg">
-                    <!-- Modal header -->
-                    <div class="flex items-center justify-between p-4 border-b border-gray-200 rounded-t">
-                        <h2 class="text-xl font-bold font-[Oswald] mb-4 text-center text-[#0776C1]">
-                            Admissions Open 2025-26
+
+
+    <section class="bg-white pb-6 pt-0 md:py-6">
+        <div class="container mx-auto px-4">
+            <div class="relative">
+                <img src="assets/cta-banner.webp" alt="" class="w-full h-auto hidden md:block" loading="lazy"
+                    decoding="async" fetchpriority="low">
+                <div class="block md:hidden flex flex-col">
+                    <div class="text-left bg-[#FD9946] p-4" data-aos="fade-right" data-aos-duration="800"
+                        data-aos-anchor-placement="top-bottom">
+                        <h2 class="font-[Amaranth] text-white text-2xl mb-3 leading-tight">
+                            Admissions Open 2025 - 26
                         </h2>
-                        <button type="button"
-                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 inline-flex justify-center items-center"
-                            data-modal-toggle="crud-modal">
-                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 14 14">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                            </svg>
-                            <span class="sr-only">Close modal</span>
+
+                        <p class="font-[Poppins] text-[15px] text-white mb-4 leading-relaxed">
+                            Supported by our dedicated R&D team, which thoroughly understands the unique
+                            developmental needs of children in this age group, we create tailored curricula and
+                            activities that foster the growth of essential skills.
+                        </p>
+
+                        <button data-modal-target="crud-modal" data-modal-toggle="crud-modal"
+                            class="bg-white text-black font-[Poppins] text-[16px] px-6 py-2 border border-white rounded-md hover:bg-gray-100 hover:border-gray-300 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out">
+                            Enrol Now!
                         </button>
                     </div>
-                    <!-- Modal body -->
-                    <form class="p-6">
-                        <div class="mb-6">
-                            <div class="space-y-4">
-                                <div>
-                                    <label
-                                        class="block text-sm font-medium text-gray-700 font-[Poppins] mb-1">Class</label>
-                                    <select title="Please select a class"
-                                        class="border border-gray-300 rounded-lg p-3 w-full font-[Poppins] focus:outline-none focus:ring-2 focus:ring-[#0776C1] focus:border-[#0776C1] transition"
-                                        required>
-                                        <option value="">Select Class</option>
-                                        <option value="nursery">Nursery</option>
-                                        <option value="kg">KG</option>
-                                        <option value="class-1">Class 1</option>
-                                        <option value="class-2">Class 2</option>
-                                    </select>
-                                </div>
+                    <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="200"
+                        data-aos-anchor-placement="top-bottom">
+                        <img src="assets/mob-cta-1.webp" alt="" class="w-full h-auto" loading="lazy" decoding="async"
+                            fetchpriority="low">
+                    </div>
+                </div>
+                <div class="absolute top-[30%] lg:left-8 md:left-6 transform -translate-y-[100%] md:-translate-y-1/2 md:w-[45%] w-full text-white hidden md:block"
+                    data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300"
+                    data-aos-anchor-placement="center-bottom">
+                    <h2
+                        class="font-[Amaranth] text-[#FFF] lg:text-[30px] text-2xl md:text-[20px] text-left lg:mb-4 md:mb-2 mb-4 leading-tight">
+                        Admissions Open 2025 - 26
+                    </h2>
+                    <p
+                        class="font-[Poppins] text-[16px] md:text-[15px] lg:text-[16px] text-[#FFF] lg:mb-6 md:mb-2 mb-6 leading-relaxed max-w-[95%]">
+                        Supported by our dedicated R&D team, which thoroughly understands the unique developmental
+                        needs of children in this age group, we create tailored curricula and activities that foster
+                        the growth of essential skills.
+                    </p>
+                    <button data-modal-target="crud-modal" data-modal-toggle="crud-modal"
+                        class="bg-white text-black font-[Poppins] lg:text-2xl text-[16px] lg:px-8 md:px-8 px-6 py-2 border border-white rounded-md hover:bg-gray-100 hover:border-gray-300 hover:shadow-lg hover:scale-105 transition-all duration-300 ease-in-out">
+                        Enrol Now!
+                    </button>
+                </div>
+                <div class="absolute md:top-0 lg:top-5 top-[60%] left-3 md:right-0 md:w-auto w-[45%] flex md:justify-end"
+                    data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500"
+                    data-aos-anchor-placement="center-bottom">
+                    <img src="assets/biub.png" alt="" class="float-updown h-auto w-[50%] md:w-[15%] lg:w-auto"
+                        loading="lazy" decoding="async" fetchpriority="low">
+                </div>
 
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 font-[Poppins] mb-1">Student
-                                        Name</label>
-                                    <input type="text" name="name" placeholder="Enter student name"
-                                        class="border border-gray-300 rounded-lg p-3 w-full font-[Poppins] focus:outline-none focus:ring-2 focus:ring-[#0776C1] focus:border-[#0776C1] transition"
-                                        required title="Please enter your name" />
-                                </div>
+            </div>
+        </div>
+    </section>
 
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 font-[Poppins] mb-1">Parent
-                                        Email</label>
-                                    <input type="email" name="email" placeholder="Enter parent email"
-                                        class="border border-gray-300 rounded-lg p-3 w-full font-[Poppins] focus:outline-none focus:ring-2 focus:ring-[#0776C1] focus:border-[#0776C1] transition"
-                                        required title="Please enter a valid email ID" />
-                                </div>
 
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 font-[Poppins] mb-1">Mobile
-                                        Number</label>
-                                    <input type="tel" name="mobile" placeholder="Enter mobile number"
-                                        class="border border-gray-300 rounded-lg p-3 w-full font-[Poppins] focus:outline-none focus:ring-2 focus:ring-[#0776C1] focus:border-[#0776C1] transition"
-                                        required pattern="[0-9]{10}"
-                                        title="Please enter a valid 10-digit mobile number" />
-                                </div>
 
-                                <div>
-                                    <label
-                                        class="block text-sm font-medium text-gray-700 font-[Poppins] mb-1">Board</label>
-                                    <select title="Please select a board"
-                                        class="border border-gray-300 rounded-lg p-3 w-full font-[Poppins] focus:outline-none focus:ring-2 focus:ring-[#0776C1] focus:border-[#0776C1] transition"
-                                        required>
-                                        <option value="">Select Board</option>
-                                        <option value="cbse">CBSE</option>
-                                        <option value="icse">ICSE</option>
-                                        <option value="state-board">State Board</option>
-                                        <option value="ib">IB</option>
-                                    </select>
+
+
+    <section class="bg-[#F1F9FF] relative overflow-hidden">
+        <div class="hidden md:block absolute top-0 left-0 w-1/2 opacity-80 pointer-events-none" data-aos="fade-right"
+            data-aos-duration="1200" data-aos-anchor-placement="top-bottom">
+            <img src="assets/tech1.png" alt="" class="w-full h-auto" loading="lazy" decoding="async"
+                fetchpriority="low">
+        </div>
+        <div class="hidden md:block absolute bottom-0 right-0 w-1/2 opacity-80 pointer-events-none" data-aos="fade-left"
+            data-aos-duration="1200" data-aos-delay="200" data-aos-anchor-placement="top-bottom">
+            <img src="assets/tech2.png" alt="" class="w-full h-auto" loading="lazy" decoding="async"
+                fetchpriority="low">
+        </div>
+        <div class="relative container mx-auto px-4 md:px-6">
+            <div class="flex flex-row justify-center items-center gap-3 mb-2 md:mb-6" data-aos="fade-down"
+                data-aos-duration="900" data-aos-anchor-placement="center-bottom">
+                <h2
+                    class="font-[Amaranth] text-[#0776C1] text-2xl md:text-[30px] md:text-center text-left leading-tight">
+                    Digital Initiatives
+                </h2>
+                <img src="assets/rainbow.png" alt="" loading="lazy" decoding="async" fetchpriority="low"
+                    class="swing-rainbow w-20 md:w-24 hover:rotate-6 transition-transform duration-300">
+            </div>
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <div
+                    class="w-full md:w-[49%] flex justify-center flex-col items-center md:items-start max-w-full md:max-w-[80%]">
+                    <div class="flex items-center mb-6 md:mb-8 group md:max-w-[350px] lg:max-w-[450px] max-w-[320px] justify-center md:justify-start"
+                        data-aos="fade-right" data-aos-duration="900" data-aos-delay="100"
+                        data-aos-anchor-placement="center-bottom">
+                        <div
+                            class="bg-[#4782ED] text-white w-20 h-16 md:w-15 md:h-15 lg:w-20 lg:h-20 flex justify-center items-center rounded-full text-sm font-bold relative z-10 border-2 border-[#F5821F] group-hover:bg-[#F5821F] group-hover:scale-110 transition-all duration-300">
+                            <h3 class="font-[Montserrat] text-3xl md:text-4xl text-white">1</h3>
+                        </div>
+                        <div
+                            class="-ml-6 md:-ml-8 bg-[#F5821F] md:w-[400px] w-full text-white px-8 md:px-16 py-3 md:py-3 rounded-md group-hover:bg-[#4782ED] transition-colors duration-300">
+                            <p
+                                class="font-[Amaranth] text-[24px] lg:text-[30px] md:text-[20px] text-center leading-tight">
+                                N-Learn App
+                            </p>
+                        </div>
+                    </div>
+                    <ul class="font-[Poppins] text-sm md:text-[16px] space-y-3 md:space-y-4 w-full max-w-md">
+                        <li data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="center-bottom"
+                            class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
+                            <strong>Learn:</strong> Video tutorials, and concept cards
+                        </li>
+                        <li data-aos="fade-up" data-aos-delay="300" data-aos-anchor-placement="center-bottom"
+                            class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
+                            <strong>Test:</strong> Weekend, mock tests
+                        </li>
+                        <li data-aos="fade-up" data-aos-delay="400" data-aos-anchor-placement="center-bottom"
+                            class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
+                            <strong>Practice:</strong> Customised solutions, progress tracking
+                        </li>
+                        <li data-aos="fade-up" data-aos-delay="500" data-aos-anchor-placement="center-bottom"
+                            class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
+                            <strong>Performance:</strong> Speed, accuracy, ranking
+                        </li>
+                        <li data-aos="fade-up" data-aos-delay="600" data-aos-anchor-placement="center-bottom"
+                            class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
+                            <strong>Exams:</strong> Weekly, and biweekly tests
+                        </li>
+                    </ul>
+                    <div class="mt-6 md:mt-8 w-full text-center md:text-left" data-aos="zoom-in" data-aos-delay="700"
+                        data-aos-anchor-placement="center-bottom">
+                        <h3 class="font-[Amaranth] text-[#0776C1] text-lg md:text-xl">
+                            Download the app
+                        </h3>
+                        <div class="flex justify-center md:justify-start gap-3 md:gap-4 mt-3 md:mt-4">
+                            <a href="https://nlearn.nspira.in/" target="_blank"
+                                class="hover:scale-105 transition-transform duration-300">
+                                <img src="assets/gpay.png" alt="Google Play" class="w-28 md:w-32 lg:w-40">
+                            </a>
+                            <a href="#" class="hover:scale-105 transition-transform duration-300">
+                                <img src="assets/apstr.png" alt="App Store" class="w-28 md:w-32 lg:w-40">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-[49%] flex items-center justify-center mt-6 md:mt-0" data-aos="fade-left"
+                    data-aos-duration="1000" data-aos-delay="500" data-aos-anchor-placement="bottom-bottom">
+                    <div class="w-full max-w-md mx-auto">
+                        <img src="assets/n-learn-app.webp" alt="N-Learn App" class="w-full h-auto">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="bg-[#FCFFF1] relative overflow-hidden py-10">
+        <div class="hidden md:block absolute bottom-0 right-0 opacity-80 pointer-events-none" data-aos="fade-left"
+            data-aos-duration="1200" data-aos-anchor-placement="top-bottom">
+            <img src="assets/tech3.png" alt="" class="w-full h-auto">
+        </div>
+        <div class="relative container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <div class="w-full md:w-[49%] flex items-center justify-center mt-6 md:mt-0 md:order-1 order-2"
+                    data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300"
+                    data-aos-anchor-placement="center-bottom">
+                    <div class="w-full max-w-md mx-auto">
+                        <img src="assets/nconnect-app.webp" alt="NConnect App" class="w-full h-auto" loading="lazy"
+                            decoding="async" fetchpriority="low">
+                    </div>
+                </div>
+                <div
+                    class="w-full md:w-[49%] flex justify-center flex-col items-center md:items-start max-w-full md:max-w-[80%] md:order-2 order-1">
+                    <div class="flex items-center mb-6 md:mb-8 group md:max-w-[350px] lg:max-w-[450px] max-w-[320px] justify-center md:justify-start"
+                        data-aos="fade-up" data-aos-duration="900" data-aos-anchor-placement="center-bottom">
+                        <div
+                            class="bg-[#4782ED] text-white w-20 h-16 md:w-15 md:h-15 lg:w-20 lg:h-20 flex justify-center items-center rounded-full text-sm font-bold relative z-10 border-2 border-[#F5821F] group-hover:bg-[#F5821F] group-hover:scale-110 transition-all duration-300">
+                            <h3 class="font-[Montserrat] text-3xl md:text-4xl text-white">2</h3>
+                        </div>
+                        <div
+                            class="-ml-6 md:-ml-8 bg-[#F5821F] md:w-[400px] w-full text-white px-8 md:px-16 py-3 md:py-3 rounded-md group-hover:bg-[#4782ED] transition-colors duration-300">
+                            <p
+                                class="font-[Amaranth] text-[24px] lg:text-[30px] md:text-[20px] text-center leading-tight">
+                                NConnect App
+                            </p>
+                        </div>
+                    </div>
+                    <ul class="font-[Poppins] text-sm md:text-[16px] space-y-3 md:space-y-4 w-full max-w-md">
+                        <li data-aos="fade-up" data-aos-delay="100" data-aos-anchor-placement="center-bottom"
+                            class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
+                            <strong>Connect:</strong> Parents, students, school
+                        </li>
+                        <li data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="center-bottom"
+                            class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
+                            <strong>Updates:</strong> Attendance, academics, events
+                        </li>
+                        <li data-aos="fade-up" data-aos-delay="300" data-aos-anchor-placement="center-bottom"
+                            class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
+                            <strong>Payments:</strong> Fees, reminders, tracking
+                        </li>
+                        <li data-aos="fade-up" data-aos-delay="400" data-aos-anchor-placement="center-bottom"
+                            class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
+                            <strong>Engage:</strong> Teachers, staff, and concerns
+                        </li>
+                        <li data-aos="fade-up" data-aos-delay="500" data-aos-anchor-placement="center-bottom"
+                            class="relative pl-6 md:pl-8 before:content-[''] before:absolute before:top-1 before:left-0 before:w-4 before:h-4 md:before:w-5 md:before:h-5 before:bg-[url('assets/flash.png')] before:bg-contain before:bg-no-repeat flash-blink">
+                            <strong>Leaves:</strong> Requests, approvals, passes
+                        </li>
+                    </ul>
+                    <div class="mt-6 md:mt-8 w-full text-center md:text-left" data-aos="zoom-in" data-aos-delay="600"
+                        data-aos-anchor-placement="center-bottom">
+                        <h3 class="font-[Amaranth] text-[#0776C1] text-lg md:text-xl">
+                            Download the app
+                        </h3>
+                        <div class="flex justify-center md:justify-start gap-3 md:gap-4 mt-3 md:mt-4">
+                            <a href="https://play.google.com/store/apps/details?id=com.nspira.nconnect&pli=1"
+                                target="_blank" class="hover:scale-105 transition-transform duration-300">
+                                <img src="assets/gpay.png" alt="Google Play" class="w-28 md:w-32 lg:w-40" loading="lazy"
+                                    decoding="async" fetchpriority="low">
+                            </a>
+                            <a href="https://apps.apple.com/in/app/nconnect-parent/id1532754754" target="_blank"
+                                class="hover:scale-105 transition-transform duration-300">
+                                <img src="assets/apstr.png" alt="App Store" class="w-28 md:w-32 lg:w-40" loading="lazy"
+                                    decoding="async" fetchpriority="low">
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="bg-white pt-6 md:py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-between gap-y-8">
+                <div class="w-full md:w-[49%] flex flex-col gap-6">
+                    <img src="assets/classroom.webp" alt="" class="w-full h-full rounded-[30px] shadow-md"
+                        data-aos="fade-right" data-aos-duration="1000" data-aos-anchor-placement="center-bottom"
+                        loading="lazy" decoding="async" fetchpriority="low">
+                    <div class="flex items-center group md:max-w-[350px] lg:max-w-[450px] max-w-[320px] justify-center md:justify-start"
+                        data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="center-bottom">
+                        <div
+                            class="bg-[#4782ED] text-white w-20 h-16 md:w-15 md:h-15 lg:w-20 lg:h-20 flex justify-center items-center rounded-full text-sm font-bold relative z-10 border-2 border-[#F5821F] group-hover:bg-[#F5821F] group-hover:scale-110 transition-all duration-300">
+                            <h3 class="font-[Montserrat] text-3xl md:text-4xl text-white">3</h3>
+                        </div>
+                        <div
+                            class="-ml-6 md:-ml-8 bg-[#F5821F] md:w-[400px] w-full text-white px-8 md:px-16 py-3 md:py-3 rounded-md group-hover:bg-[#4782ED] transition-colors duration-300">
+                            <p
+                                class="font-[Amaranth] text-[24px] lg:text-[30px] md:text-[20px] text-center leading-tight">
+                                Digital Classroom
+                            </p>
+                        </div>
+                    </div>
+                    <p class="font-[Poppins] md:text-[16px] text-[15px]" data-aos="fade-up" data-aos-delay="400"
+                        data-aos-anchor-placement="center-bottom">
+                        To keep pace with the tech-savvy world, we have seamlessly integrated technology with
+                        education. The introduction of digital classrooms at Narayana Group of Schools enriches
+                        students’ understanding of critical concepts.
+                    </p>
+
+                </div>
+                <div class="w-full md:w-[49%] flex flex-col gap-6">
+                    <img src="assets/robotics.webp" alt="" class="w-full h-full rounded-[30px] shadow-md"
+                        data-aos="fade-left" data-aos-duration="1000" data-aos-anchor-placement="center-bottom"
+                        loading="lazy" decoding="async" fetchpriority="low">
+                    <div class="flex items-center group md:max-w-[350px] lg:max-w-[450px] max-w-[320px] justify-center md:justify-start"
+                        data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="center-bottom">
+                        <div
+                            class="bg-[#4782ED] text-white w-20 h-16 md:w-15 md:h-15 lg:w-20 lg:h-20 flex justify-center items-center rounded-full text-sm font-bold relative z-10 border-2 border-[#F5821F] group-hover:bg-[#F5821F] group-hover:scale-110 transition-all duration-300">
+                            <h3 class="font-[Montserrat] text-3xl md:text-4xl text-white">4</h3>
+                        </div>
+                        <div
+                            class="-ml-6 md:-ml-8 bg-[#F5821F] md:w-[400px] w-full text-white px-8 md:px-16 py-3 md:py-3 rounded-md group-hover:bg-[#4782ED] transition-colors duration-300">
+                            <p
+                                class="font-[Amaranth] text-[24px] lg:text-[30px] md:text-[20px] text-center leading-tight">
+                                Robotics
+                            </p>
+                        </div>
+                    </div>
+                    <p class="font-[Poppins] md:text-[16px] text-[15px]" data-aos="fade-up" data-aos-delay="400"
+                        data-aos-anchor-placement="center-bottom">
+                        Explore the world of robotics at Narayana Schools where technology and innovation meet
+                        comprehensive education. Our dynamic robotics curriculum empowers students with
+                        practical knowledge in the fields of STEM, fostering critical thinking and
+                        problem-solving skills.
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="bg-white py-6">
+        <div class="container mx-auto px-4" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+            data-aos-duration="1000">
+            <h2 class="font-[Amaranth] text-[#0776C1] text-2xl md:text-[30px] md:text-center text-left leading-tight mb-6"
+                data-aos="fade-down" data-aos-delay="100">
+                Parents Testimonials
+            </h2>
+            <div class="splide" id="testi" aria-label="Testimonials Slider">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <!-- SLIDE 1 -->
+                        <li class="splide__slide" data-aos="fade-up" data-aos-delay="150">
+                            <div class="flex flex-wrap justify-between items-start gap-6">
+                                <div class="w-full md:w-[49%] relative flex items-center justify-center group cursor-pointer"
+                                    data-aos="fade-right" data-aos-delay="200">
+                                    <video class="w-full rounded-lg shadow-md mb-4 md:mb-0"
+                                        poster="assets/vde-poster1.webp" controls
+                                        onclick="this.paused ? this.play() : this.pause()">
+                                        <source src="your-video-file.mp4" type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-90">
+                                        <img src="assets/video-circle.png" alt="Play video"
+                                            class="w-20 h-20 md:w-24 md:h-24 cursor-pointer"
+                                            onclick="this.previousElementSibling.play(); this.style.display='none'" />
+                                    </div>
+                                </div>
+                                <div class="w-full md:w-[49%]" data-aos="fade-left" data-aos-delay="300">
+                                    <h2
+                                        class="font-[Amaranth] text-[#000] text-[26px] md:text-[30px] text-left leading-tight md:mb-4 mb-2">
+                                        Reyansh Devnanai Parents
+                                    </h2>
+                                    <p class="font-[Poppins] md:text-[18px] text-[16px] mb-4">CBSE XII - 2025</p>
+                                    <p class="font-[Poppins] md:text-[16px] text-[15px] leading-relaxed">
+                                        Explore the world of robotics at Narayana Schools where technology and
+                                        innovation meet comprehensive education.
+                                        Our dynamic robotics curriculum empowers students with practical knowledge
+                                        in STEM, fostering critical thinking and problem-solving skills.
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- SLIDE 2 (same structure with slight delay) -->
+                        <li class="splide__slide" data-aos="fade-up" data-aos-delay="200">
+                            <div class="flex flex-wrap justify-between items-start gap-6">
+                                <div class="w-full md:w-[49%] relative flex items-center justify-center group cursor-pointer"
+                                    data-aos="fade-right" data-aos-delay="200">
+                                    <video class="w-full rounded-lg shadow-md mb-4 md:mb-0"
+                                        poster="assets/vde-poster1.webp" controls
+                                        onclick="this.paused ? this.play() : this.pause()">
+                                        <source src="your-video-file.mp4" type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-90">
+                                        <img src="assets/video-circle.png" alt="Play video"
+                                            class="w-20 h-20 md:w-24 md:h-24 cursor-pointer"
+                                            onclick="this.previousElementSibling.play(); this.style.display='none'" />
+                                    </div>
+                                </div>
+                                <div class="w-full md:w-[49%]" data-aos="fade-left" data-aos-delay="300">
+                                    <h2
+                                        class="font-[Amaranth] text-[#000] text-[26px] md:text-[30px] text-left leading-tight md:mb-4 mb-2">
+                                        Reyansh Devnanai Parents
+                                    </h2>
+                                    <p class="font-[Poppins] md:text-[18px] text-[16px] mb-4">CBSE XII - 2025</p>
+                                    <p class="font-[Poppins] md:text-[16px] text-[15px] leading-relaxed">
+                                        Explore the world of robotics at Narayana Schools where technology and
+                                        innovation meet comprehensive education.
+                                        Our dynamic robotics curriculum empowers students with practical knowledge
+                                        in STEM, fostering critical thinking and problem-solving skills.
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- SLIDE 3 -->
+                        <li class="splide__slide" data-aos="fade-up" data-aos-delay="250">
+                            <div class="flex flex-wrap justify-between items-start gap-6">
+                                <div class="w-full md:w-[49%] relative flex items-center justify-center group cursor-pointer"
+                                    data-aos="fade-right" data-aos-delay="200">
+                                    <video class="w-full rounded-lg shadow-md mb-4 md:mb-0"
+                                        poster="assets/vde-poster1.webp" controls
+                                        onclick="this.paused ? this.play() : this.pause()">
+                                        <source src="your-video-file.mp4" type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center transition-opacity duration-300 group-hover:opacity-90">
+                                        <img src="assets/video-circle.png" alt="Play video"
+                                            class="w-20 h-20 md:w-24 md:h-24 cursor-pointer"
+                                            onclick="this.previousElementSibling.play(); this.style.display='none'" />
+                                    </div>
+                                </div>
+                                <div class="w-full md:w-[49%]" data-aos="fade-left" data-aos-delay="300">
+                                    <h2
+                                        class="font-[Amaranth] text-[#000] text-[26px] md:text-[30px] text-left leading-tight md:mb-4 mb-2">
+                                        Reyansh Devnanai Parents
+                                    </h2>
+                                    <p class="font-[Poppins] md:text-[18px] text-[16px] mb-4">CBSE XII - 2025</p>
+                                    <p class="font-[Poppins] md:text-[16px] text-[15px] leading-relaxed">
+                                        Explore the world of robotics at Narayana Schools where technology and
+                                        innovation meet comprehensive education.
+                                        Our dynamic robotics curriculum empowers students with practical knowledge
+                                        in STEM, fostering critical thinking and problem-solving skills.
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="bg-white pb-8 pt-6 mt-6 md:mt-0">
+        <div class="container px-4 mx-auto" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
+            data-aos-duration="1000" data-aos-delay="100">
+            <h2 class="font-[Amaranth] text-[#0776C1] text-center text-2xl md:text-[30px] mb-6" data-aos="fade-down"
+                data-aos-delay="150">
+                Frequently Asked Questions
+            </h2>
+
+            <div class="flex flex-wrap justify-center items-center">
+                <div class="md:w-[75%] w-full mx-auto">
+                    <div class="flex flex-wrap justify-center gap-[2%]">
+                        <!-- Accordion Item 1 -->
+                        <div class="w-full bg-[#0776C1] my-2 rounded" data-aos="fade-up" data-aos-delay="200">
+                            <button onclick="faqAccordion(1)"
+                                class="w-full flex justify-between items-center py-3 px-5">
+                                <h2 class="text-[15px] md:text-[18px] text-white font-[Poppins] text-left">
+                                    Q1. What is Narayana e-Kidz, and how is it unique compared to
+                                    normal playschools?
+                                </h2>
+                                <span id="faqIcon-1">
+                                    <!-- Initially Plus icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-4 h-4">
+                                        <path d="M8 1v14M1 8h14" stroke="white" stroke-width="2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </span>
+                            </button>
+                            <div id="faqContent-1"
+                                class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                                <div class="py-5 text-sm text-black font-[Poppins] bg-[#F5F5F5] px-5">
+                                    <p class="text-[15px]">
+                                        Narayana e-Kidz is more than a playschool. It's the first
+                                        stepping stone to a brighter, bolder future for your child.
+                                        With warm, nurturing settings and activity-based learning, we
+                                        fuel curiosity, creativity, and compassion in every child.
+                                    </p>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="flex justify-center">
-                            <button type="submit"
-                                class="relative text-white px-8 py-3 bg-gradient-to-r from-[#FF9F50] to-[#ED7A1C] rounded-lg font-[Poppins] hover:opacity-90 transition-all duration-300 pr-12">
-                                Submit Application
-                                <span
-                                    class="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 bg-[url('./assets/exit.png')] bg-contain bg-no-repeat"></span>
+                        <!-- Accordion Item 2 -->
+                        <div class="w-full bg-[#0776C1] my-2 rounded" data-aos="fade-up" data-aos-delay="300">
+                            <button onclick="faqAccordion(2)"
+                                class="w-full flex justify-between items-center py-3 px-5">
+                                <h2 class="text-[15px] md:text-[18px] text-white font-[Poppins] text-left">
+                                    Q2. How old must a child be to be eligible to join Narayana
+                                    e-Kidz?
+                                </h2>
+                                <span id="faqIcon-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-4 h-4">
+                                        <path d="M8 1v14M1 8h14" stroke="white" stroke-width="2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </span>
                             </button>
+                            <div id="faqContent-2"
+                                class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                                <div class="py-5 text-sm text-black font-[Poppins] bg-[#F5F5F5] px-5">
+                                    <p class="text-[15px]">
+                                        Kids as young as three years old can join us! We want to make
+                                        sure every child feels safe and loved, and we recognise how
+                                        emotionally taxing this first step is for parents. The child
+                                        will be excited to come to school.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                    </form>
+
+                        <!-- Accordion Item 3 -->
+                        <div class="w-full bg-[#0776C1] my-2 rounded" data-aos="fade-up" data-aos-delay="400">
+                            <button onclick="faqAccordion(3)"
+                                class="w-full flex justify-between items-center py-3 px-5">
+                                <h2 class="text-[15px] md:text-[18px] text-white font-[Poppins] text-left">
+                                    Q3. How does Narayana e-Kidz nurture a child's emotional
+                                    development?
+                                </h2>
+                                <span id="faqIcon-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-4 h-4">
+                                        <path d="M8 1v14M1 8h14" stroke="white" stroke-width="2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </span>
+                            </button>
+                            <div id="faqContent-3"
+                                class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                                <div class="py-5 text-sm text-black font-[Poppins] bg-[#F5F5F5] px-5">
+                                    <p class="text-[15px]">
+                                        We don't think learning is all about books. It's about
+                                        feelings, too. Our teachers carefully nurture children with
+                                        love, patience, and care, teaching them to be confident,
+                                        communicate effectively, and have solid emotional connections.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accordion Item 4 -->
+                        <div class="w-full bg-[#0776C1] my-2 rounded" data-aos="fade-up" data-aos-delay="500">
+                            <button onclick="faqAccordion(4)"
+                                class="w-full flex justify-between items-center py-3 px-5">
+                                <h2 class="text-[15px] md:text-[18px] text-white font-[Poppins] text-left">
+                                    Q4. Will my child be emotionally and academically prepared for
+                                    formal education after e-Kidz?
+                                </h2>
+                                <span id="faqIcon-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="w-4 h-4">
+                                        <path d="M8 1v14M1 8h14" stroke="white" stroke-width="2"
+                                            stroke-linecap="round" />
+                                    </svg>
+                                </span>
+                            </button>
+                            <div id="faqContent-4"
+                                class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+                                <div class="py-5 text-sm text-black font-[Poppins] bg-[#F5F5F5] px-5">
+                                    <p class="text-[15px]">
+                                        Absolutely! Our specially created curriculum is designed to
+                                        provide your child with a seamless education transition to
+                                        primary school, academically and emotionally. We thoughtfully
+                                        sow the proceeds of lifelong learning to help them bloom into
+                                        confident people.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
+
+
+
+    <footer class="bg-white py-4 pb-[5rem] md:pb-4 lg:pb-4">
+        <div class="container mx-auto px-4">
+            <hr class="w-full bg-black h-[2px] mb-4">
+            <div class="flex flex-wrap justify-center items-center gap-y-2">
+                <p class="text-black font-normal text-sm font-[Poppins] text-center">
+                    Copyright © narayanaschools.in <span id="copyrightYear"></span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <aside class="fixed right-0 top-[50%] hidden lg:block">
+        <div>
+            <a href="tel:18001023344"
+                class="bg-[#f5821f] hover:bg-[#e4710f] hover:scale-105 transition-all duration-300 rounded-l-lg inline-block text-center p-4 shadow-lg">
+                <svg class="w-6 h-6 text-[#FFF] mx-auto" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M6.97825 3.99999c-.3729 0-.74128.08169-1.07926.23933-.32394.1511-.61243.36846-.84696.63787-1.81892 1.82189-2.35302 3.87423-1.89899 5.93671.43916 1.9949 1.77747 3.8929 3.45642 5.572 1.67897 1.6791 3.57614 3.0176 5.57034 3.4591 2.0612.4563 4.1141-.0726 5.9396-1.8853.2705-.2348.4888-.524.6405-.8489.1581-.3387.2401-.7081.2401-1.0819 0-.3739-.082-.7432-.2401-1.0819-.1516-.3247-.3696-.6137-.6398-.8483l-1.2098-1.2106c-.5043-.5041-1.1879-.7872-1.9007-.7872-.7128 0-1.3968.2835-1.9011.7876l-.6178.6181c-.1512.1513-.3563.2363-.5701.2363-.2138 0-.4189-.085-.5701-.2363l-1.85336-1.8545c-.15117-.1513-.23609-.3565-.23609-.5704 0-.214.08493-.4192.23613-.5705l.61812-.61851c.5037-.50461.7867-1.18868.7867-1.90191s-.2833-1.39767-.7871-1.90228L8.90499 4.8778c-.23462-.26969-.5233-.48727-.84749-.63848-.33798-.15764-.70636-.23933-1.07925-.23933Z">
+                    </path>
+                    <path fill-rule="evenodd"
+                        d="M14.9925 3.99996c0-.55228.4477-.99999 1-.99999l3.03.00002c.5523 0 1 .44772 1 1v2.98135c0 .55228-.4478 1-1 1-.5523 0-1-.44772-1-1v-.58113l-3.3184 3.29112c-.3921.38887-1.0253.38627-1.4142-.00583-.3889-.39213-.3863-1.02529.0059-1.4142l3.2983-3.27133h-.6016c-.5523 0-1-.44772-1-1.00001Z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </a>
+        </div>
+        <div>
+            <a href="https://api.whatsapp.com/send?phone=919147415932"
+                class="bg-[#f5821f] hover:bg-[#e4710f] hover:scale-105 transition-all duration-300 rounded-l-lg inline-block text-center p-4 shadow-lg mt-1">
+                <svg class="w-6 h-6 text-[#FFF]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                    height="24" fill="none" viewBox="0 0 24 24">
+                    <path fill="currentColor" fill-rule="evenodd"
+                        d="M12 4a8 8 0 0 0-6.895 12.06l.569.718-.697 2.359 2.32-.648.379.243A8 8 0 1 0 12 4ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.96 9.96 0 0 1-5.016-1.347l-4.948 1.382 1.426-4.829-.006-.007-.033-.055A9.958 9.958 0 0 1 2 12Z"
+                        clip-rule="evenodd"></path>
+                    <path fill="currentColor"
+                        d="M16.735 13.492c-.038-.018-1.497-.736-1.756-.83a1.008 1.008 0 0 0-.34-.075c-.196 0-.362.098-.49.291-.146.217-.587.732-.723.886-.018.02-.042.045-.057.045-.013 0-.239-.093-.307-.123-1.564-.68-2.751-2.313-2.914-2.589-.023-.04-.024-.057-.024-.057.005-.021.058-.074.085-.101.08-.079.166-.182.249-.283l.117-.14c.121-.14.175-.25.237-.375l.033-.066a.68.68 0 0 0-.02-.64c-.034-.069-.65-1.555-.715-1.711-.158-.377-.366-.552-.655-.552-.027 0 0 0-.112.005-.137.005-.883.104-1.213.311-.35.22-.94.924-.94 2.16 0 1.112.705 2.162 1.008 2.561l.041.06c1.161 1.695 2.608 2.951 4.074 3.537 1.412.564 2.081.63 2.461.63.16 0 .288-.013.4-.024l.072-.007c.488-.043 1.56-.599 1.804-1.276.192-.534.243-1.117.115-1.329-.088-.144-.239-.216-.43-.308Z">
+                    </path>
+                </svg>
+            </a>
+        </div>
+    </aside>
+
+
+    <section class="block lg:hidden">
+        <div class="fixed bottom-0 left-0 z-50 w-full h-12 bg-[#0877be] border-t border-[#8b8b8b]">
+            <div class="grid h-full max-w-lg grid-cols-3 mx-auto font-medium">
+                <a href="tel:18001023344"
+                    class="inline-flex flex-col items-center justify-center px-5 border-gray-200 border-x hover:bg-[#00406a] group  ">
+                    <svg class="w-6 h-6 text-[#FFFFFF]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M6.97825 3.99999c-.3729 0-.74128.08169-1.07926.23933-.32394.1511-.61243.36846-.84696.63787-1.81892 1.82189-2.35302 3.87423-1.89899 5.93671.43916 1.9949 1.77747 3.8929 3.45642 5.572 1.67897 1.6791 3.57614 3.0176 5.57034 3.4591 2.0612.4563 4.1141-.0726 5.9396-1.8853.2705-.2348.4888-.524.6405-.8489.1581-.3387.2401-.7081.2401-1.0819 0-.3739-.082-.7432-.2401-1.0819-.1516-.3247-.3696-.6137-.6398-.8483l-1.2098-1.2106c-.5043-.5041-1.1879-.7872-1.9007-.7872-.7128 0-1.3968.2835-1.9011.7876l-.6178.6181c-.1512.1513-.3563.2363-.5701.2363-.2138 0-.4189-.085-.5701-.2363l-1.85336-1.8545c-.15117-.1513-.23609-.3565-.23609-.5704 0-.214.08493-.4192.23613-.5705l.61812-.61851c.5037-.50461.7867-1.18868.7867-1.90191s-.2833-1.39767-.7871-1.90228L8.90499 4.8778c-.23462-.26969-.5233-.48727-.84749-.63848-.33798-.15764-.70636-.23933-1.07925-.23933Z" />
+                        <path fill-rule="evenodd"
+                            d="M14.9925 3.99996c0-.55228.4477-.99999 1-.99999l3.03.00002c.5523 0 1 .44772 1 1v2.98135c0 .55228-.4478 1-1 1-.5523 0-1-.44772-1-1v-.58113l-3.3184 3.29112c-.3921.38887-1.0253.38627-1.4142-.00583-.3889-.39213-.3863-1.02529.0059-1.4142l3.2983-3.27133h-.6016c-.5523 0-1-.44772-1-1.00001Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <!-- <span
+                            class="text-sm font-[Amaranth] text-[#FFFFFF] font-normal group-hover:text-slate-300">Call</span> -->
+                </a>
+                <a href="https://api.whatsapp.com/send?phone=919147415932"
+                    class="inline-flex flex-col items-center justify-center px-5 border-e border-gray-200 hover:bg-[#00406a] group  ">
+                    <svg class="w-6 h-6 text-[#FFFFFF]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path fill="currentColor" fill-rule="evenodd"
+                            d="M12 4a8 8 0 0 0-6.895 12.06l.569.718-.697 2.359 2.32-.648.379.243A8 8 0 1 0 12 4ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.96 9.96 0 0 1-5.016-1.347l-4.948 1.382 1.426-4.829-.006-.007-.033-.055A9.958 9.958 0 0 1 2 12Z"
+                            clip-rule="evenodd" />
+                        <path fill="currentColor"
+                            d="M16.735 13.492c-.038-.018-1.497-.736-1.756-.83a1.008 1.008 0 0 0-.34-.075c-.196 0-.362.098-.49.291-.146.217-.587.732-.723.886-.018.02-.042.045-.057.045-.013 0-.239-.093-.307-.123-1.564-.68-2.751-2.313-2.914-2.589-.023-.04-.024-.057-.024-.057.005-.021.058-.074.085-.101.08-.079.166-.182.249-.283l.117-.14c.121-.14.175-.25.237-.375l.033-.066a.68.68 0 0 0-.02-.64c-.034-.069-.65-1.555-.715-1.711-.158-.377-.366-.552-.655-.552-.027 0 0 0-.112.005-.137.005-.883.104-1.213.311-.35.22-.94.924-.94 2.16 0 1.112.705 2.162 1.008 2.561l.041.06c1.161 1.695 2.608 2.951 4.074 3.537 1.412.564 2.081.63 2.461.63.16 0 .288-.013.4-.024l.072-.007c.488-.043 1.56-.599 1.804-1.276.192-.534.243-1.117.115-1.329-.088-.144-.239-.216-.43-.308Z" />
+                    </svg>
+                    <!-- <span
+                            class="text-sm text-[#FFFFFF] font-[Amaranth] font-normal group-hover:text-slate-300">Whatsapp</span> -->
+                </a>
+                <button type="button" data-modal-target="crud-modal" data-modal-toggle="crud-modal"
+                    class="inline-flex flex-col items-center justify-center border-gray-200 border-r px-5 hover:bg-[#00406a] group">
+                    <svg class="w-6 h-6 text-[#FFFFFF]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                            d="M12 2a1 1 0 0 1 .932.638l7 18a1 1 0 0 1-1.326 1.281L13 19.517V13a1 1 0 1 0-2 0v6.517l-5.606 2.402a1 1 0 0 1-1.326-1.281l7-18A1 1 0 0 1 12 2Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <!-- <span
+                            class="text-sm text-[#FFFFFF] font-[Amaranth] font-normal group-hover:text-slate-300">Apply
+                            Now</span> -->
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Main modal -->
+    <div id="crud-modal" tabindex="-1" aria-hidden="true"
+        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full bg-black bg-opacity-50">
+        <div class="relative p-4 w-full max-w-lg max-h-full">
+            <!-- Modal content -->
+            <div class="relative bg-white rounded-lg shadow-lg">
+                <!-- Modal header -->
+                <div class="flex items-center justify-between p-4 border-b border-gray-200 rounded-t">
+                    <h2 class="text-xl font-bold font-[Oswald] mb-4 text-center text-[#0776C1]">
+                        Admissions Open 2025-26
+                    </h2>
+                    <button type="button"
+                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 inline-flex justify-center items-center"
+                        data-modal-toggle="crud-modal">
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                </div>
+                <!-- Modal body -->
+                <form class="p-6">
+                    <div class="mb-6">
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 font-[Poppins] mb-1">Class</label>
+                                <select title="Please select a class"
+                                    class="border border-gray-300 rounded-lg p-3 w-full font-[Poppins] focus:outline-none focus:ring-2 focus:ring-[#0776C1] focus:border-[#0776C1] transition"
+                                    required>
+                                    <option value="">Select Class</option>
+                                    <option value="nursery">Nursery</option>
+                                    <option value="kg">KG</option>
+                                    <option value="class-1">Class 1</option>
+                                    <option value="class-2">Class 2</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 font-[Poppins] mb-1">Student
+                                    Name</label>
+                                <input type="text" name="name" placeholder="Enter student name"
+                                    class="border border-gray-300 rounded-lg p-3 w-full font-[Poppins] focus:outline-none focus:ring-2 focus:ring-[#0776C1] focus:border-[#0776C1] transition"
+                                    required title="Please enter your name" />
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 font-[Poppins] mb-1">Parent
+                                    Email</label>
+                                <input type="email" name="email" placeholder="Enter parent email"
+                                    class="border border-gray-300 rounded-lg p-3 w-full font-[Poppins] focus:outline-none focus:ring-2 focus:ring-[#0776C1] focus:border-[#0776C1] transition"
+                                    required title="Please enter a valid email ID" />
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 font-[Poppins] mb-1">Mobile
+                                    Number</label>
+                                <input type="tel" name="mobile" placeholder="Enter mobile number"
+                                    class="border border-gray-300 rounded-lg p-3 w-full font-[Poppins] focus:outline-none focus:ring-2 focus:ring-[#0776C1] focus:border-[#0776C1] transition"
+                                    required pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" />
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 font-[Poppins] mb-1">Board</label>
+                                <select title="Please select a board"
+                                    class="border border-gray-300 rounded-lg p-3 w-full font-[Poppins] focus:outline-none focus:ring-2 focus:ring-[#0776C1] focus:border-[#0776C1] transition"
+                                    required>
+                                    <option value="">Select Board</option>
+                                    <option value="cbse">CBSE</option>
+                                    <option value="icse">ICSE</option>
+                                    <option value="state-board">State Board</option>
+                                    <option value="ib">IB</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center">
+                        <button type="submit"
+                            class="relative text-white px-8 py-3 bg-gradient-to-r from-[#FF9F50] to-[#ED7A1C] rounded-lg font-[Poppins] hover:opacity-90 transition-all duration-300 pr-12">
+                            Submit Application
+                            <span
+                                class="absolute right-4 top-1/2 transform -translate-y-1/2 w-5 h-5 bg-[url('./assets/exit.png')] bg-contain bg-no-repeat"></span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -1437,6 +1267,7 @@
             easing: 'ease-in-out',
             once: true,
             mirror: false,
+            offset: 120,
             anchorPlacement: 'top-bottom',
         });
         const banner = document.getElementById('pop-banner');
