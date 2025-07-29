@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You | Narayana LP</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Oswald:wght@200..700&family=Amaranth:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}.float-animation{animation:float 3s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.7}}.pulse-animation{animation:pulse 2s ease-in-out infinite}@keyframes progress{0%{width:0%}100%{width:100%}}.progress-animation{animation:progress 5s linear forwards}@media(max-width:640px){.thank-you-card{border-radius:1rem;margin:1rem}.thank-you-content{padding:1.5rem}.thank-you-heading{font-size:2rem}.mascot-img{width:30vw;max-width:120px}.contact-options{flex-direction:column;gap:0.5rem}}
+    </style>        
+</head>
+
+<body class="font-[Poppins] bg-gradient-to-br from-[#0776C1] to-[#0A4D8C] text-white h-screen flex items-center">
+    <div class="w-full flex items-center justify-center px-4 py-8">
+        <div
+            class="w-full max-w-2xl bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden animate__animated animate__fadeInUp thank-you-card">
+            <div class="p-6 md:p-12 text-center thank-you-content">
+                <div
+                    class="mx-auto mb-6 md:mb-8 w-16 h-16 md:w-24 md:h-24 bg-green-100 rounded-full flex items-center justify-center animate__animated animate__bounceIn">
+                    <img src="assets/successfully.gif" alt="successfully">
+                </div>
+                <h1
+                    class="text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#0776C1] to-[#0A4D8C] font-[Oswald] thank-you-heading">
+                    Thank You!
+                </h1>
+                <p class="text-base md:text-lg mb-4 md:mb-6 text-gray-700">
+                    Your admission form has been successfully submitted. Our team will contact you shortly.
+                </p>
+                <div class="flex justify-center mb-6 md:mb-8">
+                    <img src="assets/biub.webp" alt="Narayana Mascot"
+                        class="w-32 md:w-40 h-auto float-animation mascot-img">
+                </div>
+                <div class="w-full bg-gray-200 rounded-full h-2 mb-4 md:mb-6">
+                    <div class="bg-gradient-to-r from-[#FF9F50] to-[#ED7A1C] h-2 rounded-full progress-animation"></div>
+                </div>
+                <p class="text-xs md:text-sm text-gray-600 mb-6 md:mb-8">
+                    You'll be redirected back in <span id="countdown" class="font-medium text-[#0776C1]">5</span>
+                    seconds
+                </p>
+                <button onclick="window.history.back()"
+                    class="px-6 py-2 md:px-8 md:py-3 bg-gradient-to-r from-[#FF9F50] to-[#ED7A1C] text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-sm md:text-base">
+                    Go Back Now
+                </button>
+                <div class="mt-6 md:mt-8 pt-4 md:pt-6 border-t border-gray-200">
+                    <h3 class="text-base md:text-lg font-semibold text-[#0776C1] mb-2 md:mb-3">Need immediate
+                        assistance?</h3>
+                    <div class="flex flex-wrap justify-center gap-2 md:gap-4 contact-options">
+                        <a href="tel:18001023344"
+                            class="flex items-center gap-1 md:gap-2 text-gray-700 hover:text-[#0776C1] transition text-sm md:text-base">
+                            <svg class="w-4 h-4 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M6.978 4a2 2 0 0 0-1.538.877 1.99 1.99 0 0 0-.847 1.638c-.454 2.062.08 4.114 1.899 5.936 1.679 1.679 3.576 3.017 5.57 3.459 2.062.456 4.115-.073 5.94-1.885.27-.235.488-.524.64-.849A2 2 0 0 0 18 12.918l-1.21-1.211a2 2 0 0 0-1.901-.526l-.618.618a1 1 0 0 1-1.14.188l-1.853-1.854a1 1 0 0 1-.189-1.14l.618-.618a2 2 0 0 0-.527-1.901L8.905 4.878A2 2 0 0 0 6.978 4Z" />
+                            </svg>
+                            <span>1800 102 3344</span>
+                        </a>
+                        <a href="https://api.whatsapp.com/send?phone=919147415932"
+                            class="flex items-center gap-1 md:gap-2 text-gray-700 hover:text-[#0776C1] transition text-sm md:text-base">
+                            <svg class="w-4 h-4 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M12 4a8 8 0 0 0-6.895 12.06l.569.718-.697 2.359 2.32-.648.379.243A8 8 0 1 0 12 4ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.96 9.96 0 0 1-5.016-1.347l-4.948 1.382 1.426-4.829-.006-.007-.033-.055A9.958 9.958 0 0 1 2 12Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <span>WhatsApp Chat</span>
+                        </a>
+                    </div>
+                </div>  
+            </div>
+            <div class="bg-[#fff5e] p-3 md:p-4 flex justify-center">
+                <img src="assets/logo.webp" alt="Narayana Logo" class="h-8 md:h-12">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let seconds = 5;
+        const countdownElement = document.getElementById('countdown');
+
+        const countdown = setInterval(() => {
+            seconds--;
+            countdownElement.textContent = seconds;
+
+            if (seconds <= 0) {
+                clearInterval(countdown);
+                window.history.back();
+            }
+        }, 1000);
+        const floatingElements = [
+            { src: 'assets/star.png', class: 'absolute top-10 md:top-20 left-4 md:left-10 w-8 md:w-12 h-8 md:h-12 float-animation hidden sm:block' },
+            { src: 'assets/cloud.webp', class: 'absolute bottom-10 md:bottom-20 right-4 md:right-10 w-12 md:w-16 h-auto opacity-80 float-animation hidden sm:block' }
+        ];
+
+        floatingElements.forEach(el => {
+            const img = document.createElement('img');
+            img.src = el.src;
+            img.className = el.class;
+            img.alt = '';
+            document.body.appendChild(img);
+        });
+    </script>
+</body>
+
+</html>
