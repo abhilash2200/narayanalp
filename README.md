@@ -13,7 +13,7 @@ Landing page for Narayana School built using HTML, CSS, and animations.
 ## Tech Stack  
 - HTML5  
 - CSS3 (Animations & Custom Styling Tailwind)  
-- JavaScript (optional if used)  
+- JavaScript
 
 ## Installation  
 1. Clone the repo  
